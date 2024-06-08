@@ -5,7 +5,7 @@ const texts = [
     "App Designer"
 ];
 const typingSpeed = 30; // Speed in milliseconds
-const deletingSpeed = 10; // Speed in milliseconds
+const deletingSpeed = 25; // Speed in milliseconds
 const delayBetweenTexts = 2000; // Delay between texts in milliseconds
 
 let textIndex = 0;
