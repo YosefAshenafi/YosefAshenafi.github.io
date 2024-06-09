@@ -1084,6 +1084,13 @@ body.loaded {
 	.typewriter-text {
 		font-size: 28px !important;
 	}
+	.preloader .preloader-heading .load-text {
+		font-size: 10px;
+		font-weight: 200;
+		letter-spacing: 8px;
+		text-transform: uppercase;
+		z-index: 20;
+	}
 }
 
 .hero-content-box .lead {
