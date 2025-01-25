@@ -3680,3 +3680,9 @@ body {
 body.light-mode {
     background-color: var(--tj-white);
 }
+.checkmark input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	accent-color: var(--tj-theme-primary);
+	cursor: pointer;
+}
