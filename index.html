@@ -46,6 +46,41 @@
              opacity: 0;
          }
      }
+
+     .theme-toggle-btn {
+         background: none;
+         border: none;
+         cursor: pointer;
+         font-size: 22px;
+         color: var(--tj-white);
+         width: 46px;
+         height: 46px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: all 0.3s ease;
+     }
+
+     .theme-toggle-btn:hover {
+         color: var(--tj-theme-primary);
+     }
+
+     body.light-mode .theme-toggle-btn {
+         color: var(--tj-theme-secondary);
+     }
+
+     .theme-toggle-btn .dark-icon {
+         display: none;
+     }
+
+     body.light-mode .theme-toggle-btn .light-icon {
+         display: none;
+     }
+
+     body.light-mode .theme-toggle-btn .dark-icon {
+         display: inline-block;
+     }
    </style>
 </head>
 
@@ -113,7 +148,10 @@
                   </nav>
                </div>
                <div class="header-button">
-                  <a href="#contact-section" class="btn tj-btn-primary">Hire me!</a>
+                  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                     <i class="fa-regular fa-sun light-icon"></i>
+                     <i class="fa-regular fa-moon dark-icon"></i>
+                  </button>
                </div>
                <div class="menu-bar d-lg-none">
                   <button>
@@ -158,7 +196,10 @@
                </div>
 
                <div class="header-button">
-                  <a href="#" class="btn tj-btn-primary">Hire me!</a>
+                  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                     <i class="fa-regular fa-sun light-icon"></i>
+                     <i class="fa-regular fa-moon dark-icon"></i>
+                  </button>
                </div>
 
                <div class="menu-bar d-lg-none">
@@ -190,9 +231,10 @@
                      <span class="hero-sub-title">I am Yosef</span>
                      <h1 class="hero-title">Web Developer +<br /> </h1> 
                      <div class="typewriter" style="height: 100px;">
-                       <div class="d-flex">
-                           <h2 class="me-2 h-100"></h2>
-                           <h2 style="font-size: 50px;" class="typewriter-text" id="typewriter-text"></h2></div>
+                        <div class="d-flex">
+                            <h2 class="me-2 h-100"></h2>
+                            <h2 style="font-size: 50px;" class="typewriter-text" id="typewriter-text"></h2>
+                        </div>
                      </div>
                      <div class="hero-image-box d-md-none text-center">
                         <img src="assets/img/hero/me.png" alt="" />
@@ -348,11 +390,11 @@
                               </p>
 
                               <p>
-                                 Brolly show off show off pick your nose and blow off well A bit of how’s your father
+                                 Brolly show off show off pick your nose and blow off well A bit of how's your father
                                  tomfoolery blimey, me old
-                                 mucker starkers Queen’s English dropped a clanger bite your arm spiffing good time
+                                 mucker starkers Queen's English dropped a clanger bite your arm spiffing good time
                                  burke Why chancer. Hotpot bum
-                                 bag cracking goal young delinquent naff bugger cup of chars bender loo it’s all gone to
+                                 bag cracking goal young delinquent naff bugger cup of chars bender loo it's all gone to
                                  pot the nancy cheeky.
                               </p>
 
@@ -871,7 +913,7 @@
                                  </defs>
                               </svg>
                            </div>
-                           <p class="quote">“Taylor is a professional Designer he really helps my business by providing
+                           <p class="quote">"Taylor is a professional Designer he really helps my business by providing
                               value to my business.</p>
                            <h4 class="name">Brandon Fraser</h4>
                            <span class="designation">Senior Software Dev, Cosmic Sport</span>
@@ -913,7 +955,7 @@
                                  </defs>
                               </svg>
                            </div>
-                           <p class="quote">“Taylor is a professional Designer he really helps my business by providing
+                           <p class="quote">"Taylor is a professional Designer he really helps my business by providing
                               value to my business.</p>
                            <h4 class="name">Tim Bailey</h4>
                            <span class="designation">SEO Specialist, Theme Junction</span>
@@ -955,7 +997,7 @@
                                  </defs>
                               </svg>
                            </div>
-                           <p class="quote">“Taylor is a professional Designer he really helps my business by providing
+                           <p class="quote">"Taylor is a professional Designer he really helps my business by providing
                               value to my business.</p>
                            <h4 class="name">Brandon Fraser</h4>
                            <span class="designation">Senior Software Dev, Cosmic Sport</span>
@@ -997,91 +1039,7 @@
                                  </defs>
                               </svg>
                            </div>
-                           <p class="quote">“Taylor is a professional Designer he really helps my business by providing
-                              value to my business.</p>
-                           <h4 class="name">Tim Bailey</h4>
-                           <span class="designation">SEO Specialist, Theme Junction</span>
-                        </div>
-                        <div class="testimonial-item">
-                           <div class="top-area d-flex flex-wrap justify-content-between">
-                              <div class="logo-box">
-                                 <img src="assets/img/testimonials/logo/1.png" alt="" />
-                              </div>
-                              <div class="image-box">
-                                 <img src="assets/img/testimonials/user/1.jpg" alt="" />
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                    fill="url(#paint0_linear_263_512)" />
-                                 <defs>
-                                    <linearGradient id="paint0_linear_263_512" x1="-0.0363755" y1="-0.0729998"
-                                       x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)" />
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0" />
-                                    </linearGradient>
-                                 </defs>
-                              </svg>
-                              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                    fill="url(#paint0_linear_263_513)" />
-                                 <defs>
-                                    <linearGradient id="paint0_linear_263_513" x1="-0.0363755" y1="-0.0729998"
-                                       x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)" />
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0" />
-                                    </linearGradient>
-                                 </defs>
-                              </svg>
-                           </div>
-                           <p class="quote">“Taylor is a professional Designer he really helps my business by providing
-                              value to my business.</p>
-                           <h4 class="name">Brandon Fraser</h4>
-                           <span class="designation">Senior Software Dev, Cosmic Sport</span>
-                        </div>
-                        <div class="testimonial-item">
-                           <div class="top-area d-flex flex-wrap justify-content-between">
-                              <div class="logo-box">
-                                 <img src="assets/img/testimonials/logo/2.png" alt="" />
-                              </div>
-                              <div class="image-box">
-                                 <img src="assets/img/testimonials/user/2.jpg" alt="" />
-                              </div>
-                           </div>
-                           <div class="icon-box">
-                              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                    fill="url(#paint0_linear_263_514)" />
-                                 <defs>
-                                    <linearGradient id="paint0_linear_263_514" x1="-0.0363755" y1="-0.0729998"
-                                       x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)" />
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0" />
-                                    </linearGradient>
-                                 </defs>
-                              </svg>
-                              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                 <path
-                                    d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
-                                    fill="url(#paint0_linear_263_515)" />
-                                 <defs>
-                                    <linearGradient id="paint0_linear_263_515" x1="-0.0363755" y1="-0.0729998"
-                                       x2="35.3333" y2="-0.0729991" gradientUnits="userSpaceOnUse">
-                                       <stop offset="1" stop-color="var(--tj-theme-primary)" />
-                                       <stop offset="1" stop-color="#140C1C" stop-opacity="0" />
-                                    </linearGradient>
-                                 </defs>
-                              </svg>
-                           </div>
-                           <p class="quote">“Taylor is a professional Designer he really helps my business by providing
+                           <p class="quote">"Taylor is a professional Designer he really helps my business by providing
                               value to my business.</p>
                            <h4 class="name">Tim Bailey</h4>
                            <span class="designation">SEO Specialist, Theme Junction</span>
@@ -1101,7 +1059,7 @@
                <div class="col-lg-6 col-md-7 order-2 order-md-1">
                   <div class="contact-form-box wow fadeInLeft" data-wow-delay=".3s">
                      <div class="section-header">
-                        <h2 class="section-title">Let’s work together!</h2>
+                        <h2 class="section-title">Let's work together!</h2>
                         <p>I design and code beautifully simple things and i love what i do. Just simple like that!</p>
                      </div>
 
@@ -1277,6 +1235,45 @@
    <script src="assets/js/validate.min.js"></script>
    <script src="assets/js/main.js"></script>
    <script src="assets/js/typewriter.js"></script>
+   <script>
+   // Check for saved theme preference, otherwise use system preference
+   const getPreferredTheme = () => {
+     const savedTheme = localStorage.getItem('theme');
+     if (savedTheme) {
+       return savedTheme;
+     }
+     return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+   };
+
+   // Apply theme
+   const applyTheme = (theme) => {
+     if (theme === 'light') {
+       document.body.classList.add('light-mode');
+     } else {
+       document.body.classList.remove('light-mode');
+     }
+     localStorage.setItem('theme', theme);
+   };
+
+   // Initialize theme
+   document.addEventListener('DOMContentLoaded', () => {
+     const preferredTheme = getPreferredTheme();
+     applyTheme(preferredTheme);
+
+     // Theme toggle button click handler
+     document.getElementById('theme-toggle').addEventListener('click', () => {
+       const currentTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+       applyTheme(currentTheme);
+     });
+
+     // Listen for system theme changes
+     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+       if (!localStorage.getItem('theme')) {
+         applyTheme(e.matches ? 'light' : 'dark');
+       }
+     });
+   });
+   </script>
 </body>
 
 </html>

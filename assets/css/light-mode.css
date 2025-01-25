@@ -66,6 +66,21 @@ body.light-mode {
 .light-mode .hero-section {
 	background: var(--tj-white);
 }
+.light-mode .hero-section .hero-content {
+	color: var(--tj-theme-secondary);
+}
+.light-mode .hero-section .intro_text {
+	color: var(--tj-theme-secondary);
+}
+.light-mode .hero-section .hero-image-box {
+	background: var(--tj-off-white);
+}
+.light-mode .hero-section .funfact-item {
+	color: var(--tj-theme-secondary);
+}
+.light-mode .hero-section .funfact-item .number {
+	color: var(--tj-theme-primary);
+}
 .light-mode .hero-image-box img {
 	border: 2px solid var(--tj-off-white);
 }
