@@ -24,64 +24,6 @@
    <link rel="stylesheet" href="assets/css/main.css" />
    <link rel="stylesheet" href="assets/css/light-mode.css" />
    <link rel="stylesheet" href="assets/css/responsive.css" />
-   <style>
-      .typewriter h2 {
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-     }
-
-     .cursor-pointer {
-         cursor: pointer;
-      }
-
-     .cursor {
-         display: inline-block;
-         width: 1ch;
-         animation: blink-caret 0.75s step-end infinite;
-     }
-
-     @keyframes blink-caret {
-         50% {
-             opacity: 0;
-         }
-     }
-
-     .theme-toggle-btn {
-         background: none;
-         border: none;
-         cursor: pointer;
-         font-size: 22px;
-         color: var(--tj-white);
-         width: 46px;
-         height: 46px;
-         border-radius: 50%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         transition: all 0.3s ease;
-     }
-
-     .theme-toggle-btn:hover {
-         color: var(--tj-theme-primary);
-     }
-
-     body.light-mode .theme-toggle-btn {
-         color: var(--tj-theme-secondary);
-     }
-
-     .theme-toggle-btn .dark-icon {
-         display: none;
-     }
-
-     body.light-mode .theme-toggle-btn .light-icon {
-         display: none;
-     }
-
-     body.light-mode .theme-toggle-btn .dark-icon {
-         display: inline-block;
-     }
-   </style>
 </head>
 
 <body>
@@ -148,13 +90,13 @@
                   </nav>
                </div>
                <div class="header-button">
-                  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                  <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle theme">
                      <i class="fa-regular fa-sun light-icon"></i>
                      <i class="fa-regular fa-moon dark-icon"></i>
                   </button>
                </div>
                <div class="menu-bar d-lg-none">
-                  <button>
+                  <button></button>button>
                      <span></span>
                      <span></span>
                      <span></span>
@@ -191,12 +133,15 @@
                         <li><a href="#skills-section">Skills</a></li>
                         <li><a href="#testimonials-section">Testimonials</a></li>
                         <li><a href="#contact-section">Contact</a></li>
+                        <li>
+                           
+                        </li>
                      </ul>
                   </nav>
                </div>
 
                <div class="header-button">
-                  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                  <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle theme">
                      <i class="fa-regular fa-sun light-icon"></i>
                      <i class="fa-regular fa-moon dark-icon"></i>
                   </button>
@@ -1215,7 +1160,7 @@
    </footer>
    <!-- FOOTER AREA END -->
 
-   <!-- CSS here -->
+   <!-- All JS files -->
    <script src="assets/js/jquery.min.js"></script>
    <script src="assets/js/bootstrap.bundle.min.js"></script>
    <script src="assets/js/nice-select.min.js"></script>
@@ -1233,47 +1178,9 @@
    <script src="assets/js/odometer.min.js"></script>
    <script src="assets/js/magnific-popup.js"></script>
    <script src="assets/js/validate.min.js"></script>
+   <script src="assets/js/theme.js"></script>
    <script src="assets/js/main.js"></script>
    <script src="assets/js/typewriter.js"></script>
-   <script>
-   // Check for saved theme preference, otherwise use system preference
-   const getPreferredTheme = () => {
-     const savedTheme = localStorage.getItem('theme');
-     if (savedTheme) {
-       return savedTheme;
-     }
-     return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-   };
-
-   // Apply theme
-   const applyTheme = (theme) => {
-     if (theme === 'light') {
-       document.body.classList.add('light-mode');
-     } else {
-       document.body.classList.remove('light-mode');
-     }
-     localStorage.setItem('theme', theme);
-   };
-
-   // Initialize theme
-   document.addEventListener('DOMContentLoaded', () => {
-     const preferredTheme = getPreferredTheme();
-     applyTheme(preferredTheme);
-
-     // Theme toggle button click handler
-     document.getElementById('theme-toggle').addEventListener('click', () => {
-       const currentTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
-       applyTheme(currentTheme);
-     });
-
-     // Listen for system theme changes
-     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-       if (!localStorage.getItem('theme')) {
-         applyTheme(e.matches ? 'light' : 'dark');
-       }
-     });
-   });
-   </script>
 </body>
 
 </html>
