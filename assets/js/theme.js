@@ -19,6 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme(preferredTheme);
 
     // Theme toggle button click handler
+    const themeToggleHero = document.getElementById('themeToggleHero');
+    if (themeToggleHero) {
+        themeToggleHero.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('theme') || getPreferredTheme();
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+    }
+
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
