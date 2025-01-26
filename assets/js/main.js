@@ -497,13 +497,21 @@ Description: Gerold - Personal Portfolio HTML5 Template
 				// Send email using EmailJS
 				emailjs.send('service_vtz237a', 'template_adpt2wo', templateParams)
 					.then(function(response) {
+						console.log("SUCCESS!", response.status, response.text);
 						$("#message_sent").modal("show");
 						$("#contact-form")[0].reset();
 						validator.resetForm(); // Reset validation
 					})
 					.catch(function(error) {
+						console.error("FAILED...", error);
+						// Log detailed error information
+						if (error.text) {
+							console.error("Error text:", error.text);
+						}
+						if (error.status) {
+							console.error("Error status:", error.status);
+						}
 						$("#message_fail").modal("show");
-						console.error("Email failed to send:", error);
 					})
 					.finally(function() {
 						// Reset button state
