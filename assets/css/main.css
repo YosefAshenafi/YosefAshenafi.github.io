@@ -3863,3 +3863,68 @@ label.error {
     margin-top: 5px;
     display: block;
 }
+
+.skills-container, .skills-container-more {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.skills-container-more {
+    display: none; /* Start hidden */
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.skills-container-more.active {
+    display: flex; /* Show when active */
+    height: auto;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.show-more-skills {
+    margin: 30px auto 0;
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--tj-theme-primary);
+    color: var(--tj-white);
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.show-more-skills:hover {
+    background: var(--tj-theme-secondary);
+    transform: translateY(-2px);
+}
+
+.show-more-skills i {
+    transition: transform 0.3s ease;
+}
+
+.show-more-skills.active i {
+    transform: rotate(180deg);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const moreSkills = document.querySelector('.skills-container-more');
+    const showMoreBtn = document.querySelector('.show-more-skills');
+    
+    showMoreBtn.addEventListener('click', function() {
+        moreSkills.classList.toggle('active');
+        this.classList.toggle('active');
+        
+        if (moreSkills.classList.contains('active')) {
+            this.innerHTML = 'Show Less Skills <i class="fas fa-chevron-up ms-2"></i>';
+        } else {
+            this.innerHTML = 'Show More Skills <i class="fas fa-chevron-down ms-2"></i>';
+        }
+    });
+});
