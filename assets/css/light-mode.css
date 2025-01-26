@@ -390,7 +390,7 @@ body.light-mode {
 	color: var(--tj-theme-primary);
 }
 .light-mode .tj-post__content .tj-post__title {
-	color: var(--tj-theme-primary);
+	color: var(--tj-theme-secondary);
 }
 .light-mode .single-post_tag_share .share_link a {
 	color: var(--tj-theme-primary);
@@ -415,6 +415,9 @@ body.light-mode {
 	.post_pagination_title
 	.title:hover {
 	color: var(--tj-theme-primary);
+}
+.light-mode .blog-hero-content .blog-title {
+	color: var(--tj-theme-secondary);
 }
 /* END: Blog Details Page */
 
