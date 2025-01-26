@@ -413,12 +413,14 @@
 
 	/* blog */
 	.blog-section {
-		padding-top: 80px;
-		padding-bottom: 50px;
+		padding: 80px 0;
 	}
 	.blog-item .blog-content {
 		bottom: 10px;
 		width: calc(100% - 20px);
+	}
+	.blog-item .blog-content .blog-title {
+		font-size: 20px;
 	}
 
 	/* contact section */
@@ -816,8 +818,7 @@
 
 	/* blog */
 	.blog-section {
-		padding-top: 60px;
-		padding-bottom: 30px;
+		padding: 60px 0;
 	}
 	.blog-item .blog-content {
 		bottom: 10px;
@@ -966,5 +967,13 @@
 	.tj-post-details__area .tj_main_sidebar {
 		border-top: 1px solid var(--tj-grey-4);
 		margin-top: 60px;
+	}
+
+	.blog-title a {
+		font-size: 18px;
+	}
+	
+	.blog-image img {
+		height: 200px;
 	}
 }
