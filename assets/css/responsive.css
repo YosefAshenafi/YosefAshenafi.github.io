@@ -1004,3 +1004,10 @@
 		margin: 0 auto;
 	}
 }
+
+@media (max-width: 768px) {
+	.blog-hero-section {
+		margin-top: 60px;
+		padding: 100px 0 80px;
+	}
+}
