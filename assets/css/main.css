@@ -3820,3 +3820,29 @@ body.light-mode {
   .testimonial-card > *:last-child {
 	margin-bottom: 0;
   }
+
+.blog-section .section-header {
+    margin-bottom: 50px;
+}
+
+.blog-section .section-header .d-flex {
+    flex-direction: row;
+    gap: 30px;
+}
+
+.blog-section .section-header .btn {
+    white-space: nowrap;
+    height: fit-content;
+    padding: 12px 30px;
+    margin-top: 20px;
+}
+
+.blog-section .section-header .section-title-wrap {
+    text-align: left;
+    max-width: 600px;
+}
+
+.blog-section .section-header .btn {
+    white-space: nowrap;
+    padding: 12px 30px;
+}

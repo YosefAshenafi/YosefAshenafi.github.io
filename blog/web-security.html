@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Modern Web Security Best Practices - Yosef Ashenafi</title>
+    <meta name="description" content="Essential security practices for modern web applications" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="../assets/css/animate.min.css" />
+   <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="../assets/css/font-awesome-pro.min.css" />
+   <link rel="stylesheet" href="../assets/css/flaticon_gerold.css" />
+   <link rel="stylesheet" href="../assets/css/nice-select.css" />
+   <link rel="stylesheet" href="../assets/css/backToTop.css" />
+   <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+   <link rel="stylesheet" href="../assets/css/swiper.min.css" />
+   <link rel="stylesheet" href="../assets/css/odometer-theme-default.css" />
+   <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
+   <link rel="stylesheet" href="../assets/css/main.css" />
+   <link rel="stylesheet" href="../assets/css/light-mode.css" />
+   <link rel="stylesheet" href="../assets/css/responsive.css" />
+   <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+</head>
+
+<body class="inner-page">
+    <!-- Reference to existing header -->
+    <header class="tj-header-area header-absolute">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-wrap align-items-center">
+                    <div class="logo-box">
+                        <a href="../index.html">
+                        </a>
+                    </div>
+
+                    <div class="header-info-list d-none d-md-inline-block">
+                        <ul class="ul-reset">
+                        </ul>
+                    </div>
+
+                    <div class="header-menu">
+                        <nav>
+                            <ul>
+                                <li><a href="../index.html#intro">Home</a></li>
+                                <li><a href="../index.html#services-section">Services</a></li>
+                                <li><a href="../index.html#works-section">Works</a></li>
+                                <li><a href="../index.html#resume-section">Resume</a></li>
+                                <li><a href="../index.html#skills-section">Skills</a></li>
+                                <li><a href="../index.html#testimonials-section">Testimonials</a></li>
+                                <li><a href="../index.html#contact-section">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="header-button">
+                        <button class="theme-toggle-btn" id="themeToggleHero" aria-label="Toggle theme">
+                            <i class="lni lni-sun light-icon"></i>
+                            <i class="fa-regular fa-moon dark-icon"></i>
+                        </button>
+                    </div>
+
+                    <div class="menu-bar d-lg-none">
+                        <button>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add the sticky header -->
+    <header class="tj-header-area header-2 header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-wrap align-items-center">
+                    <div class="logo-box">
+                        <a href="../index.html">
+                        </a>
+                    </div>
+
+                    <div class="header-menu">
+                        <nav>
+                            <ul>
+                                <li><a href="../index.html#intro">Home</a></li>
+                                <li><a href="../index.html#services-section">Services</a></li>
+                                <li><a href="../index.html#works-section">Works</a></li>
+                                <li><a href="../index.html#resume-section">Resume</a></li>
+                                <li><a href="../index.html#skills-section">Skills</a></li>
+                                <li><a href="../index.html#testimonials-section">Testimonials</a></li>
+                                <li><a href="../index.html#contact-section">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="header-button">
+                        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle theme">
+                            <i class="lni lni-sun light-icon"></i>
+                            <i class="fa-regular fa-moon dark-icon"></i>
+                        </button>
+                    </div>
+
+                    <div class="menu-bar d-lg-none">
+                        <button>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Detail Hero Section -->
+    <section class="blog-hero-section" style="padding: 180px 0 100px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="blog-hero-content text-center">
+                        <div class="blog-meta wow fadeInUp" data-wow-delay=".2s">
+                            <span class="date">February 25, 2024</span>
+                            <span class="category">Security</span>
+                        </div>
+                        <h1 class="blog-title wow fadeInUp" data-wow-delay=".3s">
+                            Modern Web Security Best Practices: Protecting Your Applications
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="blog-content-section" style="padding: 100px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="blog-featured-image wow fadeInUp" data-wow-delay=".4s">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5" alt="Web Security" class="img-fluid">
+                    </div>
+
+                    <div class="blog-content wow fadeInUp" data-wow-delay=".5s">
+                        <p class="lead">
+                            In today's interconnected digital landscape, web security is more critical than ever. As web applications become increasingly complex and handle sensitive data, implementing robust security measures is essential to protect both users and systems from evolving threats.
+                        </p>
+
+                        <h2>Essential Security Fundamentals</h2>
+                        <p>Modern web security requires a comprehensive approach that addresses multiple layers of protection:</p>
+                        <ul>
+                            <li>Authentication and authorization</li>
+                            <li>Data encryption and protection</li>
+                            <li>Input validation and sanitization</li>
+                            <li>Security headers and configurations</li>
+                        </ul>
+
+                        <h2>Key Security Measures</h2>
+                        
+                        <h3>1. Authentication and Access Control</h3>
+                        <p>Implement robust authentication mechanisms:</p>
+                        <ul>
+                            <li>Multi-factor authentication (MFA)</li>
+                            <li>Strong password policies</li>
+                            <li>Session management best practices</li>
+                            <li>Role-based access control (RBAC)</li>
+                        </ul>
+
+                        <h3>2. Data Protection</h3>
+                        <p>Secure sensitive data throughout its lifecycle:</p>
+                        <ul>
+                            <li>TLS/SSL encryption for data in transit</li>
+                            <li>Secure data storage and encryption at rest</li>
+                            <li>Proper key management</li>
+                            <li>Regular security audits and monitoring</li>
+                        </ul>
+
+                        <h3>3. Input Validation and Sanitization</h3>
+                        <p>Protect against injection attacks and malicious input:</p>
+                        <ul>
+                            <li>Validate all user input server-side</li>
+                            <li>Implement proper input sanitization</li>
+                            <li>Use parameterized queries</li>
+                            <li>Encode output to prevent XSS attacks</li>
+                        </ul>
+
+                        <h3>4. Security Headers and Configurations</h3>
+                        <p>Implement security headers and proper configurations:</p>
+                        <ul>
+                            <li>Content Security Policy (CSP)</li>
+                            <li>HTTP Strict Transport Security (HSTS)</li>
+                            <li>X-Frame-Options and other security headers</li>
+                            <li>Secure cookie configurations</li>
+                        </ul>
+
+                        <h2>Common Security Vulnerabilities</h2>
+                        <p>Be aware of and protect against common vulnerabilities:</p>
+                        <ul>
+                            <li>Cross-Site Scripting (XSS)</li>
+                            <li>SQL Injection</li>
+                            <li>Cross-Site Request Forgery (CSRF)</li>
+                            <li>Broken Authentication</li>
+                            <li>Security Misconfigurations</li>
+                        </ul>
+
+                        <h2>Security Testing and Monitoring</h2>
+                        <p>Implement continuous security testing and monitoring:</p>
+                        <ul>
+                            <li>Regular security assessments and penetration testing</li>
+                            <li>Automated security scanning</li>
+                            <li>Real-time monitoring and logging</li>
+                            <li>Incident response planning</li>
+                        </ul>
+
+                        <h2>Best Practices for Developers</h2>
+                        <p>Follow these security best practices in development:</p>
+                        <ul>
+                            <li>Keep dependencies up to date</li>
+                            <li>Follow the principle of least privilege</li>
+                            <li>Implement proper error handling</li>
+                            <li>Use security linters and automated tools</li>
+                            <li>Conduct regular code reviews with security focus</li>
+                        </ul>
+
+                        <p>Web security is an ongoing process that requires constant vigilance and adaptation to new threats. By implementing these security measures and staying informed about emerging vulnerabilities, we can better protect our applications and users in today's challenging security landscape.</p>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="author-bio wow fadeInUp" data-wow-delay=".6s">
+                        <div class="author-image">
+                            <img src="../../assets/img/hero/me.png" alt="Yosef Ashenafi">
+                        </div>
+                        <div class="author-info">
+                            <h6>Yosef Ashenafi</h6>
+                            <p>Senior Software Engineer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tj-footer-area">
+        <!-- Copy footer content from index.html lines 1226-1238 -->
+    </footer>
+
+    <!-- All JS files -->
+   <script src="../assets/js/jquery.min.js"></script>
+   <script src="../assets/js/bootstrap.bundle.min.js"></script>
+   <script src="../assets/js/nice-select.min.js"></script>
+   <script src="../assets/js/backToTop.js"></script>
+   <script src="../assets/js/smooth-scroll.js"></script>
+   <script src="../assets/js/appear.min.js"></script>
+   <script src="../assets/js/wow.min.js"></script>
+   <script src="../assets/js/gsap.min.js"></script>
+   <script src="../assets/js/one-page-nav.js"></script>
+   <script src="../assets/js/lightcase.js"></script>
+   <script src="../assets/js/owl.carousel.min.js"></script>
+   <script src="../assets/js/swiper.min.js"></script>
+   <script src="../assets/js/imagesloaded-pkgd.js"></script>
+   <script src="../assets/js/isotope.pkgd.min.js"></script>
+   <script src="../assets/js/odometer.min.js"></script>
+   <script src="../assets/js/magnific-popup.js"></script>
+   <script src="../assets/js/validate.min.js"></script>
+   <script src="../assets/js/theme.js"></script>
+   <script src="../assets/js/main.js"></script>
+   <script src="../assets/js/typewriter.js"></script>
+</body>
+
+</html> 

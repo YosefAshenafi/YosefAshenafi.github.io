@@ -657,3 +657,43 @@ body.light-mode .testimonial-card:hover {
 		color: var(--tj-theme-secondary);
 	}
 }
+
+/* Light mode blog card styles */
+.light-mode .blog-card {
+    background: var(--tj-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .blog-card:hover {
+    border-color: var(--tj-theme-primary);
+}
+
+.light-mode .blog-content .blog-title a {
+    color: var(--tj-theme-secondary);
+}
+
+.light-mode .blog-content .blog-title a:hover {
+    color: var(--tj-theme-primary);
+}
+
+.light-mode .blog-content .blog-excerpt {
+    color: var(--tj-theme-accent-2);
+}
+
+.light-mode .blog-content .blog-category {
+    color: var(--tj-theme-primary);
+}
+
+.light-mode .blog-content .read-more {
+    color: var(--tj-theme-primary);
+}
+
+.light-mode .blog-content .read-more:hover {
+    color: var(--tj-theme-secondary);
+}
+
+.light-mode .blog-date {
+    background: var(--tj-theme-primary);
+    color: var(--tj-white);
+}
