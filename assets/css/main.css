@@ -3913,18 +3913,48 @@ label.error {
     transform: rotate(180deg);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const moreSkills = document.querySelector('.skills-container-more');
-    const showMoreBtn = document.querySelector('.show-more-skills');
-    
-    showMoreBtn.addEventListener('click', function() {
-        moreSkills.classList.toggle('active');
-        this.classList.toggle('active');
-        
-        if (moreSkills.classList.contains('active')) {
-            this.innerHTML = 'Show Less Skills <i class="fas fa-chevron-up ms-2"></i>';
-        } else {
-            this.innerHTML = 'Show More Skills <i class="fas fa-chevron-down ms-2"></i>';
-        }
-    });
-});
+.hero-image-wrapper {
+    position: relative;
+    display: inline-block;
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.hero-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--tj-theme-primary);
+    filter: blur(30px);
+    opacity: 0.3;
+    z-index: -1;
+    animation: glowAnimation 3s ease-in-out infinite;
+}
+
+.hero-image-wrapper img {
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes glowAnimation {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
