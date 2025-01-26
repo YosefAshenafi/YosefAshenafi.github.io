@@ -101,7 +101,6 @@
                   <button></button>button>
                      <span></span>
                      <span></span>
-                     <span></span>
                   </button>
                </div>
             </div>
@@ -411,28 +410,6 @@
                                  </button>
                               </li>
                            </ul>
-                        </div>
-
-                        <div class="sidebar_widget contact_form">
-                           <div class="widget_title">
-                              <h3 class="title">Get in Touch</h3>
-                           </div>
-
-                           <form action="https://themejunction.net/html/gerold/demo/index.html">
-                              <div class="form_group">
-                                 <input type="text" name="name" id="name" placeholder="Name" autocomplete="off" />
-                              </div>
-                              <div class="form_group">
-                                 <input type="email" name="semail" id="semail" placeholder="Email" autocomplete="off" />
-                              </div>
-                              <div class="form_group">
-                                 <textarea name="smessage" id="smessage" placeholder="Your message"
-                                    autocomplete="off"></textarea>
-                              </div>
-                              <div class="form_btn">
-                                 <button class="btn tj-btn-primary" type="submit">Send Message</button>
-                              </div>
-                           </form>
                         </div>
                      </div>
                   </div>
@@ -1108,12 +1085,6 @@
                               </div>
                               <div class="col-sm-6">
                                  <div class="form_group">
-                                    <input type="text" name="conLName" id="conLName" placeholder="Last name"
-                                       autocomplete="off" />
-                                 </div>
-                              </div>
-                              <div class="col-sm-6">
-                                 <div class="form_group">
                                     <input type="email" name="conEmail" id="conEmail" placeholder="Email address"
                                        autocomplete="off" />
                                  </div>
@@ -1141,9 +1112,7 @@
                                  </div>
                               </div>
                               <div class="col-12">
-                                 <div class="form_btn">
-                                    <button type="submit" class="btn tj-btn-primary">Send Message</button>
-                                 </div>
+                                 <button class="btn tj-btn-primary" type="button">Send Message</button>
                               </div>
                            </div>
                         </form>
@@ -1270,6 +1239,7 @@
    <script src="assets/js/theme.js"></script>
    <script src="assets/js/main.js"></script>
    <script src="assets/js/typewriter.js"></script>
+   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
    <script>
       $(".testimonials-slider").owlCarousel({
          loop: true,
@@ -1295,6 +1265,13 @@
             }
          }
       });
+   </script>
+   <script>
+      // Initialize EmailJS
+      (function() {
+          // Initialize EmailJS with your public key
+          emailjs.init("HLNRxbHPEH9EtHWto");
+      })();
    </script>
 </body>
 

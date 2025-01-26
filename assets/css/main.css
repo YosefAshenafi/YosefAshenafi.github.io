@@ -3846,3 +3846,13 @@ body.light-mode {
     white-space: nowrap;
     padding: 12px 30px;
 }
+.error {
+    border-color: red !important;
+}
+
+label.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}

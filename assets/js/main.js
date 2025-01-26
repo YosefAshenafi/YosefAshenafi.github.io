@@ -389,41 +389,129 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			});
 		}
 
-		// Form Validation
-		/* contact form */
+		// Form Validation and Submission
 		if ($("#contact-form").length > 0) {
-			$("#contact-form").validate({
+			// Initialize EmailJS
+			emailjs.init("HLNRxbHPEH9EtHWto");
+			
+			// Initialize form validation
+			const validator = $("#contact-form").validate({
+				errorPlacement: function(error, element) {
+					// Remove any existing error messages for this element
+					element.next('.error').remove();
+					error.addClass('invalid-feedback');
+					error.insertAfter(element);
+				},
+				// Clear previous messages before showing new ones
+				showErrors: function(errorMap, errorList) {
+					// Remove all existing error messages first
+					this.currentElements.next('.error').remove();
+					this.defaultShowErrors();
+				},
 				rules: {
-					conName: "required",
+					conName: {
+						required: true,
+						minlength: 2
+					},
 					conEmail: {
 						required: true,
-						email: true,
+						email: true
 					},
+					conPhone: {
+						required: true
+					},
+					conService: {
+						required: true
+					},
+					conMessage: {
+						required: true,
+						minlength: 10
+					}
 				},
-
 				messages: {
-					conName: "Enter your name.",
-					conEmail: "Enter a valid email.",
-				},
-				submitHandler: function (form) {
-					// start ajax request
-					$.ajax({
-						type: "POST",
-						url: "assets/mail/contact-form.php",
-						data: $("#contact-form").serialize(),
-						cache: false,
-						success: function (data) {
-							if (data == "Y") {
-								$("#message_sent").modal("show");
-								$("#contact-form").trigger("reset");
-							} else {
-								$("#message_fail").modal("show");
-							}
-						},
+					conName: {
+						required: "Please enter your name",
+						minlength: "Name must be at least 2 characters"
+					},
+					conEmail: {
+						required: "Please enter your email",
+						email: "Please enter a valid email address"
+					},
+					conPhone: {
+						required: "Please enter your phone number"
+					},
+					conService: {
+						required: "Please select a service"
+					},
+					conMessage: {
+						required: "Please enter your message",
+						minlength: "Message must be at least 10 characters"
+					}
+				}
+			});
+			
+			// Handle button click with validation
+			$("#contact-form button[type='button']").on("click", function(e) {
+				e.preventDefault();
+				
+				// Trigger validation manually
+				const form = $("#contact-form");
+				form.validate();  // Make sure validation is initialized
+				
+				// Show all error messages
+				if (!form.valid()) {
+					// Get all invalid elements
+					const invalidElements = form.find(":input.error");
+					
+					// Show error messages for each invalid element
+					invalidElements.each(function() {
+						const element = $(this);
+						const errorMessage = element.next("label.error");
+						if (!errorMessage.length) {
+							// If error message doesn't exist, create it
+							const message = validator.settings.messages[element.attr("name")].required;
+							$("<label>")
+								.addClass("error")
+								.text(message)
+								.insertAfter(element);
+						}
 					});
-				},
+					return false;
+				}
+				
+				// Rest of your existing code for sending email
+				const submitBtn = $(this);
+				const originalBtnText = submitBtn.text();
+				submitBtn.prop('disabled', true).text('Sending...');
+
+				// Prepare template parameters
+				const templateParams = {
+					from_name: $("#conName").val(),
+					from_email: $("#conEmail").val(),
+					phone: $("#conPhone").val(),
+					service: $("#conService").val(),
+					message: $("#conMessage").val(),
+					to_email: 'yosefashenafi7@gmail.com'
+				};
+
+				// Send email using EmailJS
+				emailjs.send('service_vtz237a', 'template_adpt2wo', templateParams)
+					.then(function(response) {
+						$("#message_sent").modal("show");
+						$("#contact-form")[0].reset();
+						validator.resetForm(); // Reset validation
+					})
+					.catch(function(error) {
+						$("#message_fail").modal("show");
+						console.error("Email failed to send:", error);
+					})
+					.finally(function() {
+						// Reset button state
+						submitBtn.prop('disabled', false).text(originalBtnText);
+					});
+
+				return false;
 			});
 		}
-		/* !contact form */
 	});
 })(jQuery);
