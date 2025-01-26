@@ -141,7 +141,87 @@
     <!-- Blog Content Section -->
     <section class="blog-content-section" style="padding: 100px 0;">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row">
+                <!-- Move Sidebar Column to the left -->
+                <div class="col-lg-4">
+                    <div class="blog-sidebar">
+                        <!-- Search Widget -->
+                        <div class="sidebar_widget widget_search wow fadeInUp" data-wow-delay=".3s">
+                            <h4 class="widget-title">Search</h4>
+                            <div class="tj-widget__search form_group">
+                                <input type="text" id="blogSearch" placeholder="Search blog posts...">
+                                <button type="submit" class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Categories Widget -->
+                        <div class="sidebar_widget widget_categories wow fadeInUp" data-wow-delay=".4s">
+                            <h4 class="widget-title">Categories</h4>
+                            <ul>
+                                <li><a href="#">Artificial Intelligence</a> <span>(3)</span></li>
+                                <li><a href="#">Best Practices</a> <span>(2)</span></li>
+                                <li><a href="#">Cloud Computing</a> <span>(4)</span></li>
+                                <li><a href="#">DevOps</a> <span>(1)</span></li>
+                                <li><a href="#">Mobile Development</a> <span>(2)</span></li>
+                                <li><a href="#">Security</a> <span>(1)</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Recent Posts Widget -->
+                        <div class="sidebar_widget tj_recent_posts wow fadeInUp" data-wow-delay=".5s">
+                            <h4 class="widget-title">Recent Posts</h4>
+                            <ul>
+                                <li>
+                                    <div class="recent-post_thumb">
+                                        <a href="ai-ethics.html">
+                                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995" alt="AI Ethics">
+                                        </a>
+                                    </div>
+                                    <div class="recent-post_content">
+                                        <div class="tj-post__meta">
+                                            <span>March 15, 2024</span>
+                                        </div>
+                                        <h3 class="recent-post_title">
+                                            <a href="ai-ethics.html">The Ethics of AI: Navigating the Future of Technology</a>
+                                        </h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="recent-post_thumb">
+                                        <a href="cloud-native.html">
+                                            <img src="https://plus.unsplash.com/premium_photo-1683141114059-aaeaf635dc05" alt="Cloud Native">
+                                        </a>
+                                    </div>
+                                    <div class="recent-post_content">
+                                        <div class="tj-post__meta">
+                                            <span>March 5, 2024</span>
+                                        </div>
+                                        <h3 class="recent-post_title">
+                                            <a href="cloud-native.html">Cloud-Native Architecture: Building Scalable Systems</a>
+                                        </h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tags Widget -->
+                        <div class="sidebar_widget widget_tags wow fadeInUp" data-wow-delay=".6s">
+                            <h4 class="widget-title">Popular Tags</h4>
+                            <div class="tagcloud">
+                                <a href="#">Clean Code</a>
+                                <a href="#">Best Practices</a>
+                                <a href="#">Development</a>
+                                <a href="#">Software</a>
+                                <a href="#">Maintenance</a>
+                                <a href="#">Testing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Column -->
                 <div class="col-lg-8">
                     <div class="blog-featured-image wow fadeInUp" data-wow-delay=".4s">
                         <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2" alt="Clean Code" class="img-fluid">
@@ -282,6 +362,9 @@
    <script src="../assets/js/theme.js"></script>
    <script src="../assets/js/main.js"></script>
    <script src="../assets/js/typewriter.js"></script>
+   <script src="../assets/js/blog-search.js"></script>
+   <script src="../assets/js/blog-detail-search.js"></script>
+   <script src="../assets/js/blog-filters.js"></script>
 </body>
 
 </html> 
