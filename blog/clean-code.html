@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Clean Code: The Art of Writing Maintainable Software - Yosef Ashenafi</title>
+    <meta name="description" content="Best practices for writing clean, maintainable code" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="../assets/css/animate.min.css" />
+   <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="../assets/css/font-awesome-pro.min.css" />
+   <link rel="stylesheet" href="../assets/css/flaticon_gerold.css" />
+   <link rel="stylesheet" href="../assets/css/nice-select.css" />
+   <link rel="stylesheet" href="../assets/css/backToTop.css" />
+   <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+   <link rel="stylesheet" href="../assets/css/swiper.min.css" />
+   <link rel="stylesheet" href="../assets/css/odometer-theme-default.css" />
+   <link rel="stylesheet" href="../assets/css/magnific-popup.css" />
+   <link rel="stylesheet" href="../assets/css/main.css" />
+   <link rel="stylesheet" href="../assets/css/light-mode.css" />
+   <link rel="stylesheet" href="../assets/css/responsive.css" />
+   <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+</head>
+
+<body class="inner-page">
+    <!-- Reference to existing header -->
+    <header class="tj-header-area header-absolute">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-wrap align-items-center">
+                    <div class="logo-box">
+                        <a href="../index.html">
+                        </a>
+                    </div>
+
+                    <div class="header-info-list d-none d-md-inline-block">
+                        <ul class="ul-reset">
+                        </ul>
+                    </div>
+
+                    <div class="header-menu">
+                        <nav>
+                            <ul>
+                                <li><a href="../index.html#intro">Home</a></li>
+                                <li><a href="../index.html#services-section">Services</a></li>
+                                <li><a href="../index.html#works-section">Works</a></li>
+                                <li><a href="../index.html#resume-section">Resume</a></li>
+                                <li><a href="../index.html#skills-section">Skills</a></li>
+                                <li><a href="../index.html#testimonials-section">Testimonials</a></li>
+                                <li><a href="../index.html#contact-section">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="header-button">
+                        <button class="theme-toggle-btn" id="themeToggleHero" aria-label="Toggle theme">
+                            <i class="lni lni-sun light-icon"></i>
+                            <i class="fa-regular fa-moon dark-icon"></i>
+                        </button>
+                    </div>
+
+                    <div class="menu-bar d-lg-none">
+                        <button>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add the sticky header -->
+    <header class="tj-header-area header-2 header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex flex-wrap align-items-center">
+                    <div class="logo-box">
+                        <a href="../index.html">
+                        </a>
+                    </div>
+
+                    <div class="header-menu">
+                        <nav>
+                            <ul>
+                                <li><a href="../index.html#intro">Home</a></li>
+                                <li><a href="../index.html#services-section">Services</a></li>
+                                <li><a href="../index.html#works-section">Works</a></li>
+                                <li><a href="../index.html#resume-section">Resume</a></li>
+                                <li><a href="../index.html#skills-section">Skills</a></li>
+                                <li><a href="../index.html#testimonials-section">Testimonials</a></li>
+                                <li><a href="../index.html#contact-section">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="header-button">
+                        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle theme">
+                            <i class="lni lni-sun light-icon"></i>
+                            <i class="fa-regular fa-moon dark-icon"></i>
+                        </button>
+                    </div>
+
+                    <div class="menu-bar d-lg-none">
+                        <button>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Detail Hero Section -->
+    <section class="blog-hero-section" style="padding: 180px 0 100px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="blog-hero-content text-center">
+                        <div class="blog-meta wow fadeInUp" data-wow-delay=".2s">
+                            <span class="date">March 10, 2024</span>
+                            <span class="category">Best Practices</span>
+                        </div>
+                        <h1 class="blog-title wow fadeInUp" data-wow-delay=".3s">
+                            Clean Code: The Art of Writing Maintainable Software
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="blog-content-section" style="padding: 100px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="blog-featured-image wow fadeInUp" data-wow-delay=".4s">
+                        <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2" alt="Clean Code" class="img-fluid">
+                    </div>
+
+                    <div class="blog-content wow fadeInUp" data-wow-delay=".5s">
+                        <p class="lead">
+                            Writing clean, maintainable code is a fundamental skill that separates good developers from great ones. It's not just about making code work; it's about making it work elegantly and sustainably for the long term.
+                        </p>
+
+                        <h2>What Makes Code "Clean"?</h2>
+                        <p>Clean code is characterized by several key attributes that make it easier to understand, maintain, and modify:</p>
+                        <ul>
+                            <li>Readability and clarity of intent</li>
+                            <li>Simple and straightforward logic</li>
+                            <li>Meaningful naming conventions</li>
+                            <li>Proper documentation and comments</li>
+                            <li>Consistent formatting and structure</li>
+                        </ul>
+
+                        <h2>Core Principles of Clean Code</h2>
+                        
+                        <h3>1. Single Responsibility Principle (SRP)</h3>
+                        <p>Each class or function should have one, and only one, reason to change. This principle promotes:</p>
+                        <ul>
+                            <li>Focused, well-defined functionality</li>
+                            <li>Easier testing and maintenance</li>
+                            <li>Better code organization</li>
+                            <li>Reduced coupling between components</li>
+                        </ul>
+
+                        <h3>2. DRY (Don't Repeat Yourself)</h3>
+                        <p>Eliminate code duplication by:</p>
+                        <ul>
+                            <li>Creating reusable functions and components</li>
+                            <li>Abstracting common patterns</li>
+                            <li>Using inheritance and composition effectively</li>
+                            <li>Maintaining a single source of truth</li>
+                        </ul>
+
+                        <h3>3. KISS (Keep It Simple, Stupid)</h3>
+                        <p>Simplicity should be a key goal in design, and unnecessary complexity should be avoided:</p>
+                        <ul>
+                            <li>Write straightforward, easy-to-understand code</li>
+                            <li>Avoid premature optimization</li>
+                            <li>Break complex problems into smaller, manageable pieces</li>
+                            <li>Use clear, descriptive names for variables and functions</li>
+                        </ul>
+
+                        <h2>Practical Tips for Writing Clean Code</h2>
+                        
+                        <h3>1. Meaningful Names</h3>
+                        <p>Choose names that reveal intent:</p>
+                        <ul>
+                            <li>Use descriptive variable names (e.g., 'userAccount' instead of 'ua')</li>
+                            <li>Follow consistent naming conventions</li>
+                            <li>Make names pronounceable and searchable</li>
+                            <li>Avoid abbreviations unless they're widely understood</li>
+                        </ul>
+
+                        <h3>2. Function Design</h3>
+                        <p>Create functions that are focused and manageable:</p>
+                        <ul>
+                            <li>Keep functions small and focused</li>
+                            <li>Limit the number of parameters</li>
+                            <li>Avoid side effects</li>
+                            <li>Follow consistent error handling patterns</li>
+                        </ul>
+
+                        <h3>3. Comments and Documentation</h3>
+                        <p>Use comments wisely:</p>
+                        <ul>
+                            <li>Write self-documenting code when possible</li>
+                            <li>Use comments to explain why, not what</li>
+                            <li>Keep documentation up-to-date</li>
+                            <li>Include examples for complex algorithms</li>
+                        </ul>
+
+                        <h2>Tools and Practices</h2>
+                        <p>Leverage tools and practices that promote clean code:</p>
+                        <ul>
+                            <li>Code formatters and linters</li>
+                            <li>Automated testing frameworks</li>
+                            <li>Code review processes</li>
+                            <li>Continuous Integration/Continuous Deployment (CI/CD)</li>
+                        </ul>
+
+                        <h2>The Long-Term Benefits</h2>
+                        <p>Investing in clean code practices yields significant benefits:</p>
+                        <ul>
+                            <li>Reduced maintenance costs</li>
+                            <li>Easier onboarding for new team members</li>
+                            <li>Improved code quality and reliability</li>
+                            <li>Better team collaboration</li>
+                        </ul>
+
+                        <p>Remember, writing clean code is not just about following rules—it's about crafting software that stands the test of time. By incorporating these principles and practices into your daily work, you'll create code that's not only functional but also maintainable and scalable for years to come.</p>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="author-bio wow fadeInUp" data-wow-delay=".6s">
+                        <div class="author-image">
+                            <img src="../../assets/img/hero/me.png" alt="Yosef Ashenafi">
+                        </div>
+                        <div class="author-info">
+                            <h6>Yosef Ashenafi</h6>
+                            <p>Senior Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="tj-footer-area">
+        <!-- Copy footer content from index.html lines 1226-1238 -->
+    </footer>
+
+    <!-- All JS files -->
+   <script src="../assets/js/jquery.min.js"></script>
+   <script src="../assets/js/bootstrap.bundle.min.js"></script>
+   <script src="../assets/js/nice-select.min.js"></script>
+   <script src="../assets/js/backToTop.js"></script>
+   <script src="../assets/js/smooth-scroll.js"></script>
+   <script src="../assets/js/appear.min.js"></script>
+   <script src="../assets/js/wow.min.js"></script>
+   <script src="../assets/js/gsap.min.js"></script>
+   <script src="../assets/js/one-page-nav.js"></script>
+   <script src="../assets/js/lightcase.js"></script>
+   <script src="../assets/js/owl.carousel.min.js"></script>
+   <script src="../assets/js/swiper.min.js"></script>
+   <script src="../assets/js/imagesloaded-pkgd.js"></script>
+   <script src="../assets/js/isotope.pkgd.min.js"></script>
+   <script src="../assets/js/odometer.min.js"></script>
+   <script src="../assets/js/magnific-popup.js"></script>
+   <script src="../assets/js/validate.min.js"></script>
+   <script src="../assets/js/theme.js"></script>
+   <script src="../assets/js/main.js"></script>
+   <script src="../assets/js/typewriter.js"></script>
+</body>
+
+</html> 
