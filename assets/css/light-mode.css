@@ -505,3 +505,123 @@ body.light-mode {
 .light-mode .specialization-item .specialization-icon {
 	background-color: var(--tj-theme-primary-2);
 }
+
+/* Base testimonial card styles */
+.testimonial-card {
+	background: var(--tj-theme-accent-2);
+	border-radius: 20px;
+	padding: 40px;
+	margin: 20px;
+	transition: transform 0.3s ease;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.testimonial-card:hover {
+	transform: translateY(-5px);
+}
+
+.testimonial-content {
+	flex: 1 0 auto;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+
+.quote-icon {
+	color: var(--tj-theme-primary);
+	font-size: 30px;
+	margin-bottom: 20px;
+	opacity: 0.5;
+}
+
+.testimonial-content p {
+	flex: 1 0 auto;
+	margin: 0;
+	font-size: 18px;
+	line-height: 1.6;
+	color: var(--tj-white);
+}
+
+.testimonial-author {
+	margin-top: auto;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-shrink: 0;
+}
+
+.author-image {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 3px solid var(--tj-theme-primary);
+}
+
+.author-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.author-info {
+	flex: 1;
+}
+
+.author-info h4 {
+	font-size: 20px;
+	color: var(--tj-white);
+	margin-bottom: 5px;
+}
+
+.author-info span {
+	font-size: 14px;
+	color: var(--tj-theme-primary);
+}
+
+.company-logo {
+	width: 80px;
+	opacity: 0.7;
+	transition: opacity 0.3s ease;
+}
+
+.company-logo:hover {
+	opacity: 1;
+}
+
+.company-logo img {
+	width: 100%;
+	height: auto;
+}
+
+/* Light mode testimonial card overrides */
+body.light-mode .testimonial-card {
+	background: var(--tj-white);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .testimonial-content p {
+	color: var(--tj-theme-secondary);
+}
+
+body.light-mode .author-info h4 {
+	color: var(--tj-theme-secondary);
+}
+
+body.light-mode .quote-icon {
+	color: var(--tj-theme-primary);
+	opacity: 0.7;
+}
+
+body.light-mode .author-info span {
+	color: var(--tj-theme-primary);
+}
+
+body.light-mode .testimonial-card:hover {
+	border-color: var(--tj-theme-primary);
+}
