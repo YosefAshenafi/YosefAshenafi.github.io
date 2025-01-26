@@ -1,8 +1,6 @@
 const texts = [
-    "Software Developer",
     "Mobile App Developer",
     "UI/UX Designer",
-    "App Designer"
 ];
 const typingSpeed = 30; // Speed in milliseconds
 const deletingSpeed = 25; // Speed in milliseconds
