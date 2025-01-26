@@ -4098,3 +4098,13 @@ label.error {
 .tj-widget__search .search-btn:hover {
     color: var(--tj-white);
 }
+
+.widget_categories a.active {
+    color: var(--tj-theme-primary);
+    font-weight: bold;
+}
+
+.tagcloud a.active {
+    background-color: var(--tj-theme-primary);
+    color: var(--tj-white);
+}
