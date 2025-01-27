@@ -151,6 +151,10 @@ body.light-mode {
 .light-mode .funfact-item {
 	color: var(--tj-theme-primary);
 }
+.light-mode .blog-hero-content .lead {
+	color: var(--tj-theme-accent-2);
+	text-shadow: none;
+}
 /* END: Hero Section */
 
 /*
@@ -699,4 +703,56 @@ body.light-mode .testimonial-card:hover {
 .light-mode .blog-date {
     background: var(--tj-theme-primary);
     color: var(--tj-white);
+}
+
+/* Blog Details Second Column Light Mode Styles */
+.light-mode .blog-sidebar {
+    background: var(--tj-white);
+}
+
+.light-mode .sidebar_widget {
+    background: var(--tj-off-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .widget-title {
+    color: var(--tj-theme-secondary);
+}
+
+.light-mode .tj-widget__search input {
+    background: var(--tj-white);
+    border: 1px solid var(--tj-grey-2);
+    color: var(--tj-theme-secondary);
+}
+
+.light-mode .tj-widget__search input::placeholder {
+    color: var(--tj-grey-1);
+}
+
+.light-mode .tj_recent_posts ul li .recent-post_content .recent-post_title {
+    color: var(--tj-theme-secondary);
+}
+
+.light-mode .tj_recent_posts ul li .recent-post_content .recent-post_title:hover {
+    color: var(--tj-theme-primary);
+}
+
+.light-mode .tagcloud a {
+    background: var(--tj-white);
+    color: var(--tj-theme-secondary);
+    border: 1px solid var(--tj-grey-2);
+}
+
+.light-mode .tagcloud a:hover {
+    background: var(--tj-theme-primary);
+    color: var(--tj-white);
+    border-color: var(--tj-theme-primary);
+}
+
+.light-mode .tj-post__meta span {
+    color: var(--tj-theme-accent-2);
+}
+
+.light-mode .sidebar_widget .widget-title::after {
+    background: var(--tj-theme-primary);
 }
