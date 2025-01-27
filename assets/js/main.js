@@ -404,8 +404,39 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			submitBtn.on("click", function(e) {
 				e.preventDefault();
 				
-				if (!form.valid()) {
-					console.log("Form validation failed");
+				// Clear any previous error messages
+				$(".error-message").remove();
+				
+				// Get form values
+				const name = $("#conName").val().trim();
+				const email = $("#conEmail").val().trim();
+				const message = $("#conMessage").val().trim();
+				
+				// Validation flags
+				let isValid = true;
+				
+				// Validate name
+				if (!name) {
+					isValid = false;
+					$("#conName").after('<span class="error-message">Name is required</span>');
+				}
+				
+				// Validate email
+				if (!email) {
+					isValid = false;
+					$("#conEmail").after('<span class="error-message">Email is required</span>');
+				} else if (!isValidEmail(email)) {
+					isValid = false;
+					$("#conEmail").after('<span class="error-message">Please enter a valid email address</span>');
+				}
+				
+				// Validate message
+				if (!message) {
+					isValid = false;
+					$("#conMessage").after('<span class="error-message">Message is required</span>');
+				}
+				
+				if (!isValid) {
 					return false;
 				}
 				
@@ -414,38 +445,34 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 				// Prepare template parameters
 				const templateParams = {
-					from_name: $("#conName").val().trim(),
-					from_email: $("#conEmail").val().trim(),
+					from_name: name,
+					from_email: email,
 					phone: $("#conPhone").val().trim(),
 					service: $("#conService").val(),
-					message: $("#conMessage").val().trim()
+					message: message
 				};
 
-				// Debug logs
-				console.log('Attempting to send email with params:', templateParams);
-				
 				emailjs.send('service_vtz237a', 'template_adpt2wo', templateParams)
 					.then(function(response) {
 						console.log("SUCCESS!", response.status, response.text);
 						$("#message_sent").modal("show");
 						form[0].reset();
+						submitBtn.prop('disabled', false).text(originalBtnText);
 					})
 					.catch(function(error) {
 						console.error("FAILED...", error);
-						if (error.text) {
-							console.error("Error text:", error.text);
-						}
-						if (error.status) {
-							console.error("Error status:", error.status);
-						}
 						$("#message_fail").modal("show");
-					})
-					.finally(function() {
 						submitBtn.prop('disabled', false).text(originalBtnText);
 					});
 
 				return false;
 			});
+			
+			// Email validation helper function
+			function isValidEmail(email) {
+				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				return emailRegex.test(email);
+			}
 		}
 	});
 })(jQuery);

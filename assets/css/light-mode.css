@@ -787,3 +787,27 @@ body.light-mode .testimonial-card:hover {
     border-radius: 12px;
     font-size: 12px;
 }
+
+.light-mode .contact-info-box {
+  background: var(--tj-white);
+}
+
+.light-mode .contact-info-list li {
+  background: var(--tj-off-white);
+}
+
+.light-mode .contact-info-list li:hover {
+  background: var(--tj-theme-accent-1);
+}
+
+.light-mode .contact-info-list .text-box p {
+  color: var(--tj-theme-primary);
+}
+
+.light-mode .contact-info-list .text-box a {
+  color: var(--tj-theme-secondary);
+}
+
+.light-mode .contact-info-list .text-box a:hover {
+  color: var(--tj-theme-primary);
+}

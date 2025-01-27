@@ -2883,95 +2883,112 @@ blockquote cite::before {
 .contact-section {
 	padding-top: 120px;
 	padding-bottom: 120px;
-	background: var(--tj-black-2);
 	position: relative;
-}
-.contact-form-box {
-	background: var(--tj-theme-accent-2);
-	padding: 40px;
-	border-radius: 15px;
-}
-.contact-form-box .section-header {
-	margin-bottom: 25px;
+	overflow: hidden;
+	min-height: 600px;
 }
 
-.form_group {
-	margin-bottom: 15px;
-	width: 100%;
-}
-.form_group select,
-.form_group .nice-select,
-.form_group
-	input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]),
-.form_group textarea {
-	display: block;
-	width: 100%;
-	background: var(--tj-black-2);
-	border: 1px solid var(--tj-grey-4);
-	font-size: 16px;
-	line-height: 1;
-	color: var(--tj-white);
-	padding: 14px 20px;
-	border-radius: 8px;
-	transition: all 0.3s 0s ease-out;
-	outline: none;
-	height: auto;
-}
-.form_group .nice-select {
-	padding: 17px 20px;
-}
-.form_group textarea {
-	height: 200px;
-	resize: none;
-}
-.form_group
-	input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):focus,
-.form_group textarea:focus {
-	border-color: var(--tj-theme-primary);
-}
-.form_btn .btn {
-	padding: 20px 35px;
-}
-.contact-info-list li {
-	padding-left: 75px;
-	margin-bottom: 40px;
-}
-.contact-info-list li:last-child {
-	margin-bottom: 0;
-}
-.contact-info-list .icon-box {
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	background: -o-linear-gradient(
-		289deg,
-		var(--tj-theme-secondary) 0%,
-		var(--tj-theme-primary) 100%
-	);
-	background: linear-gradient(
-		161deg,
-		var(--tj-theme-secondary) 0%,
-		var(--tj-theme-primary) 100%
-	);
+.map-background {
 	position: absolute;
 	top: 0;
 	left: 0;
-	text-align: center;
-	line-height: 60px;
-	font-size: 20px;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	pointer-events: none;
 }
+
+.map-background iframe {
+	filter: grayscale(1);
+}
+
+.contact-info-box {
+	background: var(--tj-theme-accent-2);
+	border-radius: 20px;
+	padding: 50px;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.contact-info-list {
+	margin-top: 40px;
+}
+
+.contact-info-list li {
+	height: 100%;
+	padding: 25px;
+	border-radius: 15px;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(5px);
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+}
+
+.contact-info-list li:hover {
+	background: rgba(255, 255, 255, 0.1);
+	transform: translateY(-3px);
+}
+
+.contact-info-list .icon-box {
+	width: 50px;
+	height: 50px;
+	min-width: 50px;
+	border-radius: 50%;
+	background: linear-gradient(161deg, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 20px;
+}
+
+.contact-info-list .text-box {
+	flex: 1;
+}
+
 .contact-info-list .text-box p {
-	margin-bottom: 3px;
-}
-.contact-info-list .text-box a {
-	font-size: 20px;
-	font-weight: var(--tj-fw-medium);
-	color: var(--tj-white);
-	text-decoration: none;
-	transition: all 0.4s ease-in-out 0s;
-}
-.contact-info-list .text-box a:hover {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
 	color: var(--tj-theme-primary);
+}
+
+.contact-info-list .text-box a {
+	font-size: 18px;
+	color: var(--tj-white);
+	display: block;
+	margin-bottom: 5px;
+	transition: all 0.3s ease;
+}
+
+.contact-info-list .text-box a:last-child {
+	margin-bottom: 0;
+}
+
+.contact-info-list .social-icons {
+	display: flex;
+	gap: 10px;
+	margin-top: 10px;
+	flex-wrap: wrap;
+}
+
+.contact-info-list .social-icons a {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(161deg, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 100%);
+	color: var(--tj-white);
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+.contact-info-list .social-icons a:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 /* END: Contact Section */
 
@@ -4107,4 +4124,58 @@ label.error {
 .tagcloud a.active {
     background-color: var(--tj-theme-primary);
     color: var(--tj-white);
+}
+
+/* Add this to your existing CSS (around line 3500 where other form styles are) */
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+.form_group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Add after line 2975 */
+.contact-map-box {
+  margin-bottom: 30px;
+}
+
+.social-links {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.social-links h4 {
+  color: var(--tj-white);
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: left;
+}
+
+.social-icons a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(161deg, var(--tj-theme-secondary) 0%, var(--tj-theme-primary) 100%);
+  color: var(--tj-white);
+  font-size: 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
