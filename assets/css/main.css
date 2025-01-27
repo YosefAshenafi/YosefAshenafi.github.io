@@ -102,6 +102,8 @@ Description: Gerold - Personal Portfolio HTML5 Template
 	--tj-fz-h5: 22px;
 	--tj-fz-h6: 18px;
 	--tj-fz-sub-title: 36px;
+    --tj-theme-secondary-rgb: 30, 30, 30;  /* Adjust these values based on your theme color */
+    --tj-theme-primary-rgb: 115, 67, 210;  /* Adjust these values based on your theme color */
 }
 
 * {
@@ -4178,4 +4180,59 @@ label.error {
 .social-icons a:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hero-image-wrapper .quote-box {
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px;
+    background: var(--tj-theme-accent-2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: floatAnimation 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+.hero-image-wrapper .quote-box blockquote {
+    margin-bottom: 0;
+    color: var(--tj-white);
+}
+
+.hero-image-wrapper .quote-box .blockquote-footer {
+    color: var(--tj-theme-primary);
+}
+
+.quote-box {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    z-index: -1;
+}
+
+.quote-box blockquote {
+    background: rgba(var(--tj-theme-secondary-rgb), 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.quote-box .lead {
+    opacity: 0.7;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.quote-box .blockquote-footer {
+    opacity: 0.5;
+}
+
+/* Add this if you're using light mode */
+.light-mode .quote-box blockquote {
+    background: rgba(var(--tj-theme-primary-rgb), 0.1);
 }
