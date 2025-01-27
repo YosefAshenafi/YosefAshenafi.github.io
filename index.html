@@ -25,6 +25,12 @@
    <link rel="stylesheet" href="assets/css/light-mode.css" />
    <link rel="stylesheet" href="assets/css/responsive.css" />
    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+   <script type="text/javascript">
+      (function() {
+         emailjs.init("HLNRxbHPEH9EtHWto"); // Replace with your actual public key
+      })();
+   </script>
 </head>
 
 <body>
@@ -1317,7 +1323,6 @@
    <script src="assets/js/theme.js"></script>
    <script src="assets/js/main.js"></script>
    <script src="assets/js/typewriter.js"></script>
-   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
    <script>
       $(".testimonials-slider").owlCarousel({
          loop: true,
@@ -1360,11 +1365,6 @@
              }
          });
      });
-   </script>
-   <script>
-      (function() {
-          emailjs.init("HLNRxbHPEH9EtHWto");
-      })();
    </script>
 </body>
 

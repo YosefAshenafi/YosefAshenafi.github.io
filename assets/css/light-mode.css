@@ -756,3 +756,34 @@ body.light-mode .testimonial-card:hover {
 .light-mode .sidebar_widget .widget-title::after {
     background: var(--tj-theme-primary);
 }
+
+/* Category Widget Light Mode Styles */
+.light-mode .widget_categories ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--tj-grey-2);
+}
+
+.light-mode .widget_categories ul li:last-child {
+    border-bottom: none;
+}
+
+.light-mode .widget_categories ul li a {
+    color: var(--tj-theme-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.light-mode .widget_categories ul li a:hover {
+    color: var(--tj-theme-primary);
+}
+
+.light-mode .widget_categories ul li span {
+    color: var(--tj-theme-primary);
+    background: var(--tj-white);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}

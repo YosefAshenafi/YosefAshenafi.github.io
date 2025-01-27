@@ -389,122 +389,49 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			});
 		}
 
-		// Form Validation and Submission
-		if ($("#contact-form").length > 0) {
-			// Initialize EmailJS
-			emailjs.init("HLNRxbHPEH9EtHWto");
-			
-			// Initialize form validation
-			const validator = $("#contact-form").validate({
-				errorPlacement: function(error, element) {
-					// Remove any existing error messages for this element
-					element.next('.error').remove();
-					error.addClass('invalid-feedback');
-					error.insertAfter(element);
-				},
-				// Clear previous messages before showing new ones
-				showErrors: function(errorMap, errorList) {
-					// Remove all existing error messages first
-					this.currentElements.next('.error').remove();
-					this.defaultShowErrors();
-				},
-				rules: {
-					conName: {
-						required: true,
-						minlength: 2
-					},
-					conEmail: {
-						required: true,
-						email: true
-					},
-					conPhone: {
-						required: true
-					},
-					conService: {
-						required: true
-					},
-					conMessage: {
-						required: true,
-						minlength: 10
-					}
-				},
-				messages: {
-					conName: {
-						required: "Please enter your name",
-						minlength: "Name must be at least 2 characters"
-					},
-					conEmail: {
-						required: "Please enter your email",
-						email: "Please enter a valid email address"
-					},
-					conPhone: {
-						required: "Please enter your phone number"
-					},
-					conService: {
-						required: "Please select a service"
-					},
-					conMessage: {
-						required: "Please enter your message",
-						minlength: "Message must be at least 10 characters"
-					}
-				}
+		// Initialize EmailJS once when the document loads
+		(function() {
+			emailjs.init({
+				publicKey: "HLNRxbHPEH9EtHWto"
 			});
+		})();
+
+		// Form handling
+		if ($("#contact-form").length > 0) {
+			const form = $("#contact-form");
+			const submitBtn = form.find('button[type="button"]');
 			
-			// Handle button click with validation
-			$("#contact-form button[type='button']").on("click", function(e) {
+			submitBtn.on("click", function(e) {
 				e.preventDefault();
 				
-				// Trigger validation manually
-				const form = $("#contact-form");
-				form.validate();  // Make sure validation is initialized
-				
-				// Show all error messages
 				if (!form.valid()) {
-					// Get all invalid elements
-					const invalidElements = form.find(":input.error");
-					
-					// Show error messages for each invalid element
-					invalidElements.each(function() {
-						const element = $(this);
-						const errorMessage = element.next("label.error");
-						if (!errorMessage.length) {
-							// If error message doesn't exist, create it
-							const message = validator.settings.messages[element.attr("name")].required;
-							$("<label>")
-								.addClass("error")
-								.text(message)
-								.insertAfter(element);
-						}
-					});
+					console.log("Form validation failed");
 					return false;
 				}
 				
-				// Rest of your existing code for sending email
-				const submitBtn = $(this);
 				const originalBtnText = submitBtn.text();
 				submitBtn.prop('disabled', true).text('Sending...');
 
 				// Prepare template parameters
 				const templateParams = {
-					from_name: $("#conName").val(),
-					from_email: $("#conEmail").val(),
-					phone: $("#conPhone").val(),
+					from_name: $("#conName").val().trim(),
+					from_email: $("#conEmail").val().trim(),
+					phone: $("#conPhone").val().trim(),
 					service: $("#conService").val(),
-					message: $("#conMessage").val(),
-					to_email: 'yosefashenafi7@gmail.com'
+					message: $("#conMessage").val().trim()
 				};
 
-				// Send email using EmailJS
+				// Debug logs
+				console.log('Attempting to send email with params:', templateParams);
+				
 				emailjs.send('service_vtz237a', 'template_adpt2wo', templateParams)
 					.then(function(response) {
 						console.log("SUCCESS!", response.status, response.text);
 						$("#message_sent").modal("show");
-						$("#contact-form")[0].reset();
-						validator.resetForm(); // Reset validation
+						form[0].reset();
 					})
 					.catch(function(error) {
 						console.error("FAILED...", error);
-						// Log detailed error information
 						if (error.text) {
 							console.error("Error text:", error.text);
 						}
@@ -514,7 +441,6 @@ Description: Gerold - Personal Portfolio HTML5 Template
 						$("#message_fail").modal("show");
 					})
 					.finally(function() {
-						// Reset button state
 						submitBtn.prop('disabled', false).text(originalBtnText);
 					});
 
