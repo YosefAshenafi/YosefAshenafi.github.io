@@ -811,3 +811,23 @@ body.light-mode .testimonial-card:hover {
 .light-mode .contact-info-list .text-box a:hover {
   color: var(--tj-theme-primary);
 }
+
+/* Quote box light mode styles */
+.light-mode .quote-box {
+    background: var(--tj-white);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 40px; /* Added more space from the image */
+}
+
+.light-mode .quote-box blockquote {
+    color: var(--tj-theme-secondary);
+}
+
+.light-mode .quote-box .blockquote-footer {
+    color: var(--tj-theme-accent-2);
+}
+
+.light-mode .quote-box:hover {
+    border-color: var(--tj-theme-primary);
+}
