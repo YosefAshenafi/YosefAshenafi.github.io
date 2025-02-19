@@ -63,6 +63,16 @@
    </div>
    <!-- Preloader Area End -->
 
+   <script>
+      // Add this immediately after preloader
+      setTimeout(() => {
+          if (document.querySelector('.preloader')) {
+              document.querySelector('.preloader').style.display = 'none';
+              document.body.classList.remove('loaded');
+          }
+      }, 3000); // Failsafe - force hide after 3 seconds
+   </script>
+
    <!-- start: Back To Top -->
    <div class="progress-wrap" id="scrollUp">
       <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
@@ -1388,6 +1398,44 @@
              }
          });
      });
+   </script>
+   <script>
+      $(window).on("load", function () {
+         // Preloader
+         const svg = document.getElementById("preloaderSvg");
+         const tl = gsap.timeline({
+             onComplete: () => {
+                 document.body.classList.remove('loaded');
+                 $('.preloader').hide();
+             }
+         });
+
+         // Reduce animation duration
+         tl.to(".preloader-heading .load-text", {
+             delay: 0.5, // Reduced from 1.5
+             y: -100,
+             opacity: 0,
+             duration: 0.3 // Added duration control
+         });
+         
+         tl.to(svg, {
+             duration: 0.3, // Reduced from 0.5
+             attr: { d: "M0 502S175 272 500 272s500 230 500 230V0H0Z" },
+             ease: "power2.easeIn"
+         }).to(svg, {
+             duration: 0.3, // Reduced from 0.5
+             attr: { d: "M0 2S175 1 500 1s500 1 500 1V0H0Z" },
+             ease: "power2.easeOut"
+         });
+         
+         tl.to(".preloader", {
+             y: -1500,
+             duration: 0.3,
+             onComplete: () => {
+                 $('.preloader').remove(); // Actually remove the preloader from DOM
+             }
+         });
+      });
    </script>
 </body>
 
