@@ -1,4 +1,6 @@
 const texts = [
+    "Frontend Developer",
+    "Backend Developer",
     "Mobile App Developer",
     "UI/UX Designer",
 ];

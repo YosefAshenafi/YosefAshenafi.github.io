@@ -1036,7 +1036,7 @@ body.loaded {
 }
 
 .hero-title {
-	font-size: 65px;
+	font-size: 55px;
 	background: var(--tj-theme-primary);
 	background: -webkit-gradient(
 		linear,
