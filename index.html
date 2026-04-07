@@ -446,15 +446,15 @@
       <!-- end: Service Popup -->
 
       <!-- PORTFOLIO SECTION START -->
-      <section class="portfolio-section" id="works-section">
+      <section class="portfolio-section portfolio-section--modern" id="works-section">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                  <div class="section-header text-center">
+                  <div class="section-header section-header--portfolio text-center">
                      <h2 class="section-title wow fadeInUp" data-wow-delay=".3s">My Recent Works</h2>
-                     <p class="wow fadeInUp" data-wow-delay=".4s">
-                        Here's a showcase of my recent projects and portfolio work - each one representing unique solutions
-                        and successful collaborations with amazing clients.
+                     <p class="portfolio-section__lead wow fadeInUp" data-wow-delay=".4s">
+                        A curated set of shipped products, client sites, and experiments—each focused on clarity,
+                        performance, and a polished user experience.
                      </p>
                   </div>
                </div>
@@ -462,7 +462,7 @@
 
             <div class="row">
                <div class="col-md-12">
-                  <div class="portfolio-filter text-center wow fadeInUp" data-wow-delay=".5s">
+                  <div class="portfolio-filter portfolio-filter--modern text-center wow fadeInUp" data-wow-delay=".5s">
                      <div class="button-group filter-button-group">
                         <button data-filter="*" class="active">All</button>
                         <button data-filter=".web">Web Apps</button>
@@ -479,154 +479,210 @@
                      <!-- Pairgap — website -->
                      <div class="portfolio-item web">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/pairgap.png" alt="Pairgap marketing website" />
+                           <img src="assets/img/portfolio/pairgap.png" alt="Pairgap marketing website" loading="lazy" />
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Web</span>
+                           </div>
                            <h3 class="portfolio-title">Pairgap — Website</h3>
                            <p>
                               Public marketing site for Pairgap at pairgap.com: co-buying and joint ownership for first-time buyers and investors—waitlist, co-buyer calculator, Real Estate Prenup builder, co-buyer personality assessment, blog content, and event info. Presents the full platform story before users download the apps.
                            </p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://pairgap.com/" target="_blank" rel="noopener noreferrer" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://pairgap.com/" target="_blank" rel="noopener noreferrer" class="portfolio-link" aria-label="Open Pairgap website project"></a>
                      </div>
 
                      <!-- Pairgap — iOS (App Store) -->
                      <div class="portfolio-item mobile">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/pairgap-ios.png" alt="Pairgap iOS app screenshot from App Store" />
+                           <figure class="mobile-mockup">
+                              <div class="mobile-mockup__screen">
+                                 <img src="assets/img/portfolio/pairgap-ios.png" alt="Pairgap iOS app — personalized welcome, waitlist progress, and buying power entry" loading="lazy" />
+                              </div>
+                           </figure>
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Mobile</span>
+                              <span class="portfolio-tag">iOS</span>
+                           </div>
                            <h3 class="portfolio-title">Pairgap — iOS app</h3>
                            <p>
-                              Pairgap helps you calculate how much home you can afford, solo or with co-buyers. Enter income, down payment, and monthly debts to instantly see your Buying Power, maximum home price, and estimated monthly payment. Add co-buyers to combine finances and get each person’s share of the payment. Perfect for multi-buyer home purchases, investment partnerships, and first-time buyers looking for transparency. <a href="https://apps.apple.com/us/app/pairgap/id6755288619" target="_blank" rel="noopener noreferrer">App Store</a>.
+                              Real device capture: welcome and waitlist status, progress toward access, and a clear path into buying power and co-buying features. <a href="https://apps.apple.com/us/app/pairgap/id6755288619" target="_blank" rel="noopener noreferrer">App Store</a>.
                            </p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://apps.apple.com/us/app/pairgap/id6755288619" target="_blank" rel="noopener noreferrer" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://apps.apple.com/us/app/pairgap/id6755288619" target="_blank" rel="noopener noreferrer" class="portfolio-link" aria-label="Open Pairgap on the App Store"></a>
                      </div>
 
                      <!-- Pairgap — Android (Google Play) -->
                      <div class="portfolio-item mobile">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/pairgap-android.png" alt="Pairgap Android app screenshot from Google Play" />
+                           <figure class="mobile-mockup">
+                              <div class="mobile-mockup__screen">
+                                 <img src="assets/img/portfolio/pairgap-android.png" alt="Pairgap Android app — home with buying power and personality discovery" loading="lazy" />
+                              </div>
+                           </figure>
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Mobile</span>
+                              <span class="portfolio-tag">Android</span>
+                           </div>
                            <h3 class="portfolio-title">Pairgap — Android app</h3>
                            <p>
-                              Pairgap helps you calculate how much home you can afford, solo or with co-buyers. Enter income, down payment, and monthly debts to instantly see your Buying Power, maximum home price, and estimated monthly payment. Add co-buyers to combine finances and get each person’s share of the payment. Perfect for multi-buyer home purchases, investment partnerships, and first-time buyers looking for transparency.<a href="https://play.google.com/store/apps/details?id=com.pairgap" target="_blank" rel="noopener noreferrer">Google Play</a>.
+                              Real device capture: home experience with buying power and real-estate personality entry points, distinct from the iOS welcome/waitlist screen. <a href="https://play.google.com/store/apps/details?id=com.pairgap" target="_blank" rel="noopener noreferrer">Google Play</a>.
                            </p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://play.google.com/store/apps/details?id=com.pairgap" target="_blank" rel="noopener noreferrer" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://play.google.com/store/apps/details?id=com.pairgap" target="_blank" rel="noopener noreferrer" class="portfolio-link" aria-label="Open Pairgap on Google Play"></a>
                      </div>
 
                      <!-- Qelem — Ethiopian KG–12 learning platform -->
                      <div class="portfolio-item web uxui">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/qelem.png" alt="Qelem student dashboard — courses, MCQ, and flashcards" />
+                           <img src="assets/img/portfolio/qelem.png" alt="Qelem student dashboard — courses, MCQ, and flashcards" loading="lazy" />
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Web</span>
+                              <span class="portfolio-tag">UI / UX</span>
+                           </div>
                            <h3 class="portfolio-title">Qelem</h3>
                            <p>
                               End-to-end educational web app I designed and built for Ethiopia: KG–12 curriculum-aligned textbooks, practice MCQs, flashcards, homework, progress reports, and profile management—with English/Amharic UI. Subscription access with payments through <strong>Chapa</strong>. Live demo at <a href="https://qelemweb.vercel.app/" target="_blank" rel="noopener noreferrer">qelemweb.vercel.app</a>.
                            </p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://qelemweb.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://qelemweb.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-link" aria-label="Open Qelem project"></a>
                      </div>
 
                      <!-- Daniel Gemechu Law Office -->
                      <div class="portfolio-item web branding">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/daniel-gemechu-law.png" alt="Daniel Gemechu Law Office website" />
+                           <img src="assets/img/portfolio/daniel-gemechu-law.png" alt="Daniel Gemechu Law Office website" loading="lazy" />
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Web</span>
+                              <span class="portfolio-tag">Branding</span>
+                           </div>
                            <h3 class="portfolio-title">Daniel Gemechu Law Office</h3>
                            <p>
                               Professional site for a licensed Federal Court Advocate in Ethiopia: practice areas (construction, real estate, contract, and labour law), consultations, and trust-building content—including links to the “Higen Betegebar” YouTube channel and legal tips. Live at <a href="https://dani-gemechu.vercel.app/" target="_blank" rel="noopener noreferrer">dani-gemechu.vercel.app</a>.
                            </p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://dani-gemechu.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://dani-gemechu.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-link" aria-label="Open Daniel Gemechu Law Office site"></a>
                      </div>
 
                      <!-- Coffee Import/Export Website -->
                      <div class="portfolio-item web branding">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/coffee.png" alt="" />
+                           <img src="assets/img/portfolio/coffee.png" alt="Tukke Coffee import export website" loading="lazy" />
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Web</span>
+                              <span class="portfolio-tag">Branding</span>
+                           </div>
                            <h3 class="portfolio-title">Coffee Import/Export Website</h3>
                            <p>A Coffee Import/Export website for my client using Django, Html, CSS, and Javascript.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://www.tukkecoffee.com/" target="_blank" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://www.tukkecoffee.com/" target="_blank" class="portfolio-link" aria-label="Open Tukke Coffee website"></a>
                      </div>
 
                      <!-- Twitter Clone -->
                      <div class="portfolio-item web uxui">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/twitter.png" alt="" />
+                           <img src="assets/img/portfolio/twitter.png" alt="Twitter clone UI" loading="lazy" />
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Web</span>
+                              <span class="portfolio-tag">UI / UX</span>
+                           </div>
                            <h3 class="portfolio-title">Twitter Clone</h3>
                            <p>I just redesign the Twitter home page UI clone, Including the post functionality using React, firebase, and Gmail authentication.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://twitter-clone-5dbb1.web.app/" target="_blank" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://twitter-clone-5dbb1.web.app/" target="_blank" class="portfolio-link" aria-label="Open Twitter clone project"></a>
                      </div>
 
                      <!-- Home Broker -->
                      <div class="portfolio-item web">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/home.png" alt="" />
+                           <img src="assets/img/portfolio/home.png" alt="Home Broker real estate platform" loading="lazy" />
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Web</span>
+                           </div>
                            <h3 class="portfolio-title">Home Broker</h3>
                            <p>A real estate platform that connects buyers and renters with available properties on the market.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://addishomeslocator.com/" target="_blank" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://addishomeslocator.com/" target="_blank" class="portfolio-link" aria-label="Open Home Broker website"></a>
                      </div>
 
                      <!-- Hulu Clone -->
                      <div class="portfolio-item web uxui">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/hulu.png" alt="" />
+                           <img src="assets/img/portfolio/hulu.png" alt="Hulu clone streaming UI" loading="lazy" />
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Web</span>
+                              <span class="portfolio-tag">UI / UX</span>
+                           </div>
                            <h3 class="portfolio-title">Hulu Clone</h3>
                            <p>Hulu clone website using React, Tailwind, and Firebase.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://hulu-clone-25d1a.web.app/" target="_blank" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://hulu-clone-25d1a.web.app/" target="_blank" class="portfolio-link" aria-label="Open Hulu clone project"></a>
                      </div>
 
                      <!-- Emergency Phone Directory -->
                      <div class="portfolio-item mobile">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/directory-phone.png" alt="" />
+                           <figure class="mobile-mockup">
+                              <div class="mobile-mockup__screen">
+                                 <img src="assets/img/portfolio/directory-phone.png" alt="Ethiopian phone directory app" loading="lazy" />
+                              </div>
+                           </figure>
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Mobile</span>
+                           </div>
                            <h3 class="portfolio-title">Emergency and Basic Phone Directories</h3>
                            <p>A comprehensive mobile directory app providing quick access to emergency contacts and essential services for Android users in Ethiopia.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://apkpure.com/ethiopian-telephone-directory/com.ethiopian.jos.phonedirectory" target="_blank" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://apkpure.com/ethiopian-telephone-directory/com.ethiopian.jos.phonedirectory" target="_blank" class="portfolio-link" aria-label="Open Emergency Phone Directory app listing"></a>
                      </div>
 
                      <!-- Awesome Bible Phone -->
                      <div class="portfolio-item mobile">
                         <div class="image-box">
-                           <img src="assets/img/portfolio/bible-phone.png" alt="" />
+                           <figure class="mobile-mockup">
+                              <div class="mobile-mockup__screen">
+                                 <img src="assets/img/portfolio/bible-phone.png" alt="Awesome Bible app" loading="lazy" />
+                              </div>
+                           </figure>
                         </div>
                         <div class="content-box">
+                           <div class="portfolio-item__tags">
+                              <span class="portfolio-tag">Mobile</span>
+                           </div>
                            <h3 class="portfolio-title">Awesome Bible Phone</h3>
                            <p>A comprehensive Bible app that offers extensive customization options, including advanced search functionality, various Bible list views, and personalized reading experiences.</p>
-                           <i class="flaticon-up-right-arrow"></i>
-                           <a href="https://apps.apple.com/us/app/awesome-bible/id6499567807" target="_blank" class="portfolio-link"></a>
                         </div>
+                        <i class="flaticon-up-right-arrow portfolio-item__arrow" aria-hidden="true"></i>
+                        <a href="https://apps.apple.com/us/app/awesome-bible/id6499567807" target="_blank" class="portfolio-link" aria-label="Open Awesome Bible on the App Store"></a>
                      </div>
 
                   </div>
