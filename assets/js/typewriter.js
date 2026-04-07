@@ -1,5 +1,6 @@
 const texts = [
     "Mobile App Developer",
+    "Backend Developer",
     "UI/UX Designer",
 ];
 const typingSpeed = 30; // Speed in milliseconds
