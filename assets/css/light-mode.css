@@ -258,6 +258,9 @@ body.light-mode {
 .light-mode .skills-widget .skill-inner {
 	background: var(--tj-off-white);
 }
+.light-mode .skills-widget .skill-item .icon-box img[src*="cursor.svg"] {
+	filter: none;
+}
 /*  END: Skills Section */
 
 /*

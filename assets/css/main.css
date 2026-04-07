@@ -2097,6 +2097,11 @@ body.loaded {
     object-fit: contain;
 }
 
+/* Cursor logo: black on light cards; invert on dark theme for contrast */
+body.dark-mode .skills-widget .skill-item .icon-box img[src*="cursor.svg"] {
+    filter: brightness(0) invert(1);
+}
+
 .skills-widget .skill-item .number {
 	color: var(--tj-grey-1);
 	font-weight: 800;
