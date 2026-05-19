@@ -1,0 +1,285 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { background: #0b0d10; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans), -apple-system, system-ui, sans-serif;
+  background: #0b0d10;
+  color: #e6e7e9;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::selection { background: #7dd3a8; color: #0b0d10; }
+a { text-decoration: none; }
+h1, h2, h3, h4 { margin: 0; }
+p { margin: 0; }
+pre { margin: 0; font-family: inherit; }
+
+@keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.92) translateY(8px) } to { opacity: 1; transform: scale(1) translateY(0) } }
+@keyframes avatarWave {
+  0%   { transform: scale(1);    opacity: 0.6; }
+  100% { transform: scale(1.9);  opacity: 0;   }
+}
+
+.avatar-wave-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+.avatar-wave-wrap::before,
+.avatar-wave-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(125, 211, 168, 0.55);
+  animation: avatarWave 2.4s ease-out infinite;
+  pointer-events: none;
+}
+.avatar-wave-wrap::after {
+  animation-delay: 1.2s;
+}
+
+.avatar-btn {
+  transition: transform 0.15s;
+}
+.avatar-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ── Spacing tokens ── */
+:root {
+  --px: 56px;    /* horizontal padding */
+  --py: 96px;    /* vertical section padding */
+  --tb-h: 38px;  /* title-bar height */
+}
+
+/* ── Title bar ── */
+.title-bar {
+  height: var(--tb-h);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 14px;
+  backdrop-filter: blur(8px);
+}
+
+/* ── Nav bar ── */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 16px var(--px);
+  position: sticky;
+  top: var(--tb-h);
+  z-index: 99;
+  background: rgba(11, 13, 16, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-links-wrap {
+  display: flex;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.nav-status-wrap {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* ── Hero ── */
+.hero-section { padding: 96px var(--px) 80px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-headline {
+  font-size: 88px;
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.038em;
+}
+
+.client-strip {
+  margin-top: 80px;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.client-list {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  flex-wrap: wrap;
+}
+
+/* ── Generic section padding ── */
+.section-pad { padding: var(--py) var(--px); }
+.section-pad-contact { padding: 120px var(--px) var(--py); }
+
+/* ── Layout grids ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-focus-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.grid-focus-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+}
+
+.grid-career {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+}
+
+.grid-skills {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.grid-contact {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── Scalable headings ── */
+.contact-headline {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+/* ── Footer ── */
+.footer-bar {
+  padding: 32px var(--px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* ── Works count row ── */
+.works-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+/* ── Writing header row ── */
+.writing-header-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+/* ─────────────────────────────────────
+   Tablet  (≤ 1024px)
+───────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root { --px: 40px; }
+
+  .hero-headline { font-size: 64px; }
+  .hero-grid { gap: 40px; }
+
+  .grid-focus-layout { grid-template-columns: 1fr; gap: 40px; }
+  .grid-skills { grid-template-columns: 1fr; gap: 36px; }
+  .grid-3 { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .contact-headline { font-size: 52px; }
+}
+
+/* ─────────────────────────────────────
+   Mobile  (≤ 640px)
+───────────────────────────────────── */
+@media (max-width: 640px) {
+  :root { --px: 20px; --py: 60px; --tb-h: 36px; }
+
+  /* title bar */
+  .title-bar { height: 36px; }
+  .tb-label { display: none; }
+
+  /* nav */
+  .nav-bar { padding: 12px var(--px); }
+  .nav-links-wrap {
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 2px;
+    font-size: 11px;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  .nav-links-wrap::-webkit-scrollbar { display: none; }
+  .nav-status-wrap { display: none; }
+
+  /* hero */
+  .hero-section { padding: 52px var(--px) 36px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero-headline { font-size: 44px; letter-spacing: -0.02em; line-height: 1.08; }
+  .client-list { gap: 14px; font-size: 14px; }
+  .client-strip { margin-top: 36px; }
+
+  /* grids → single column */
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-focus-layout { grid-template-columns: 1fr; gap: 28px; }
+  .grid-focus-cards { grid-template-columns: 1fr; }
+  .grid-career { grid-template-columns: 1fr; gap: 40px; }
+  .grid-skills { grid-template-columns: 1fr; gap: 24px; }
+  .grid-contact { grid-template-columns: 1fr; gap: 32px; }
+
+  /* headings */
+  .contact-headline { font-size: 40px; letter-spacing: -0.02em; line-height: 1.1; }
+
+  /* footer */
+  .footer-bar { flex-direction: column; gap: 12px; text-align: center; }
+
+  /* section-pad-contact collapses to same as regular section */
+  .section-pad-contact { padding: var(--py) var(--px); }
+}
