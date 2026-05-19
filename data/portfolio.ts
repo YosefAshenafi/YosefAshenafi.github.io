@@ -45,6 +45,7 @@ export interface Testimonial {
   quote: string;
   name: string;
   role: string;
+  linkedin?: string;
 }
 
 export interface Portfolio {
@@ -422,7 +423,7 @@ const portfolio: Portfolio = {
     },
   ],
 
-  telegram: "t.me/jossybuildschat",
+  telegram: "t.me/jossybuilds",
 
   testimonials: [
     {
@@ -430,12 +431,14 @@ const portfolio: Portfolio = {
         "Yosef brings both technical excellence and a collaborative spirit to every project. His ability to architect elegant solutions while keeping the code maintainable made him an invaluable team member. I was particularly impressed by his dedication to mentoring others and sharing knowledge across the team.",
       name: "Dagnachew Tsegaye",
       role: "Senior Software Engineer · Microsoft",
+      linkedin: "https://www.linkedin.com/in/dagnachew-tsegaye-32a2ab25/",
     },
     {
       quote:
         "We've joined hands on a couple of projects for a little more than two years, and Yosef is one of the best people I've had as a team member. I highly recommend his expertise to any person looking for a software engineer.",
       name: "Zekarias Negash Demma",
       role: "Senior Software Engineer · Microsoft",
+      linkedin: "https://www.linkedin.com/in/zekariasnegash/",
     },
   ],
 };
