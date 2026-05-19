@@ -8,16 +8,18 @@ interface Props {
   phone: string;
   address: string;
   location: string;
+  telegram: string;
 }
 
-export default function Contact({ email, emailAlt, phone, address, location }: Props) {
+export default function Contact({ email, emailAlt, phone, address, location, telegram }: Props) {
   const links = [
-    { label: "Email", value: email, key: "M" },
-    { label: "Email (alt)", value: emailAlt, key: "A" },
-    { label: "Phone", value: phone, key: "P" },
-    { label: "GitHub", value: "github.com/yosef", key: "G" },
-    { label: "LinkedIn", value: "linkedin.com/in/yosef-ashenafi", key: "L" },
-    { label: "Address", value: address, key: "@" },
+    { label: "Email", value: email, key: "M", href: `mailto:${email}` },
+    { label: "Email (alt)", value: emailAlt, key: "A", href: `mailto:${emailAlt}` },
+    { label: "Phone", value: phone, key: "P", href: `tel:${phone.replace(/\s/g, "")}` },
+    { label: "GitHub", value: "github.com/yosef", key: "G", href: "https://github.com/yosef" },
+    { label: "LinkedIn", value: "linkedin.com/in/yosef-ashenafi", key: "L", href: "https://linkedin.com/in/yosef-ashenafi" },
+    { label: "Telegram", value: telegram, key: "T", href: `https://${telegram}` },
+    { label: "Address", value: address, key: "@", href: `https://maps.google.com/?q=${encodeURIComponent(address)}` },
   ];
 
   return (
@@ -137,13 +139,13 @@ export default function Contact({ email, emailAlt, phone, address, location }: P
           </div>
 
           {links.map((row, i) => (
-            <div
+            <a
               key={row.key}
+              href={row.href}
+              target={row.href.startsWith("mailto:") || row.href.startsWith("tel:") ? undefined : "_blank"}
+              rel="noopener noreferrer"
+              className="quick-link"
               style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 14,
-                padding: "14px 0",
                 borderBottom: i < links.length - 1 ? `1px solid ${C.lineSoft}` : "none",
               }}
             >
@@ -191,7 +193,7 @@ export default function Contact({ email, emailAlt, phone, address, location }: P
                 </div>
               </div>
               <span style={{ color: C.fgDim, fontFamily: F.mono }}>↗</span>
-            </div>
+            </a>
           ))}
         </div>
       </div>

@@ -57,11 +57,11 @@ export default function FocusAreas({ focus }: Props) {
           }}
         >
           {focus.map((f) => (
-            <div key={f.n} style={{ background: C.bg, padding: 28, minHeight: 260 }}>
+            <div key={f.n} className="focus-card">
               <div
                 style={{ display: "flex", alignItems: "baseline", gap: 12, marginBottom: 14 }}
               >
-                <span style={{ fontFamily: F.mono, fontSize: 12, color: C.accent }}>
+                <span className="focus-card-num" style={{ fontFamily: F.mono, fontSize: 12, color: C.accent, transition: "color 0.22s, text-shadow 0.22s" }}>
                   {`{${f.n}}`}
                 </span>
                 <h3
@@ -91,6 +91,7 @@ export default function FocusAreas({ focus }: Props) {
                 {f.stack.map((s) => (
                   <span
                     key={s}
+                    className="focus-card-pill"
                     style={{
                       fontFamily: F.mono,
                       fontSize: 11.5,
@@ -99,6 +100,7 @@ export default function FocusAreas({ focus }: Props) {
                       background: C.bgRaised,
                       border: `1px solid ${C.line}`,
                       borderRadius: 5,
+                      transition: "border-color 0.22s, color 0.22s",
                     }}
                   >
                     {s}

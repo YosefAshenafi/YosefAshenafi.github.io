@@ -11,7 +11,7 @@ export default function Footer() {
         background: C.bgRaised,
       }}
     >
-      <span>© 2026 yosef ashenafi · built with care in addis ababa</span>
+      <span>© 2026 yosef ashenafi</span>
       <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
         <span>v3.0.1</span>
         <span style={{ display: "flex", alignItems: "center" }}>

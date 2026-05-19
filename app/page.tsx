@@ -34,6 +34,7 @@ export default function Home() {
           phone={portfolio.phone}
           address={portfolio.address}
           location={portfolio.location}
+          telegram={portfolio.telegram}
         />
       </main>
       <Footer />

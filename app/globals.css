@@ -196,6 +196,10 @@ pre { margin: 0; font-family: inherit; }
   letter-spacing: -0.035em;
 }
 
+/* ── Quick link rows ── */
+.quick-link { display: flex; align-items: center; gap: 14px; padding: 14px 0; color: inherit; transition: opacity 0.15s; }
+.quick-link:hover { opacity: 0.7; }
+
 /* ── Footer ── */
 .footer-bar {
   padding: 32px var(--px);
@@ -203,6 +207,41 @@ pre { margin: 0; font-family: inherit; }
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
+}
+
+/* ── Focus area cards ── */
+.focus-card {
+  background: #0b0d10;
+  padding: 28px;
+  min-height: 260px;
+  position: relative;
+  transition: background 0.22s ease, transform 0.22s ease;
+  overflow: hidden;
+}
+.focus-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: #7dd3a8;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+}
+.focus-card:hover {
+  background: #13161b;
+  transform: translateY(-2px);
+}
+.focus-card:hover::before {
+  transform: scaleX(1);
+}
+.focus-card:hover .focus-card-num {
+  color: #a8e6c8;
+  text-shadow: 0 0 12px rgba(125, 211, 168, 0.5);
+}
+.focus-card:hover .focus-card-pill {
+  border-color: #2a3340;
+  color: #c0c4cc;
 }
 
 /* ── Works count row ── */
@@ -213,6 +252,180 @@ pre { margin: 0; font-family: inherit; }
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 36px;
+}
+
+/* ── Work modal ── */
+.work-modal-inner {
+  background: #0d1015;
+  border: 1px solid #1d2128;
+  border-radius: 18px;
+  overflow: hidden;
+  width: min(820px, 96vw);
+  max-height: 93vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 48px 120px rgba(0,0,0,0.75), 0 0 0 1px rgba(125,211,168,0.1);
+}
+.work-modal-body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+.work-modal-device {
+  background: #090b0e;
+  border-bottom: 1px solid #1d2128;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 28px;
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.work-modal-details {
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 28px;
+  align-items: start;
+}
+.work-modal-details-left  { display: flex; flex-direction: column; gap: 0; }
+.work-modal-details-right { display: flex; flex-direction: column; gap: 12px; }
+@media (max-width: 600px) {
+  .work-modal-device { padding: 20px 16px; }
+  .work-modal-details { grid-template-columns: 1fr; padding: 20px 16px; gap: 20px; }
+}
+
+/* ── Works filter bar ── */
+.works-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 10px 16px;
+  background: #0f1216;
+  border: 1px solid #1d2128;
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+.works-filter-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+  font-size: 11.5px;
+  margin-right: 4px;
+}
+.works-filter-pills {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+.works-filter-btn {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: #5b6068;
+  padding: 4px 11px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.works-filter-btn:hover { color: #8a8f97; background: rgba(255,255,255,0.04); }
+.works-filter-btn.active {
+  color: #7dd3a8;
+  background: rgba(125,211,168,0.08);
+  border-color: rgba(125,211,168,0.28);
+}
+
+/* ── Works masonry ── */
+.works-masonry {
+  columns: 3;
+  column-gap: 16px;
+}
+
+/* ── Work card ── */
+.work-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 16px;
+  background: #13161b;
+  border: 1px solid #1d2128;
+  border-radius: 14px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7dd3a8, #86a8e0);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.32s ease;
+  z-index: 3;
+}
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(125,211,168,0.16);
+  border-color: rgba(125,211,168,0.2);
+}
+.work-card:hover::before { transform: scaleX(1); }
+.work-card:hover .work-arrow {
+  color: #7dd3a8 !important;
+  transform: translate(2px, -2px);
+}
+
+/* ── Device frame wrapper ── */
+.work-device-wrap {
+  position: relative;
+  border-bottom: 1px solid #1d2128;
+  overflow: hidden;
+}
+
+/* Subtle inner vignette on screenshots */
+.work-frame-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(8,10,13,0.55) 100%);
+  pointer-events: none;
+}
+
+/* ── Hover overlay (full device area) ── */
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+.work-card:hover .work-overlay { opacity: 1; }
+.work-view-chip {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  color: #7dd3a8;
+  padding: 4px 10px;
+  border: 1px solid rgba(125,211,168,0.38);
+  border-radius: 999px;
+  background: rgba(8,10,13,0.82);
+  backdrop-filter: blur(8px);
+  letter-spacing: 0.04em;
+  pointer-events: auto;
 }
 
 /* ── Writing header row ── */
@@ -237,6 +450,7 @@ pre { margin: 0; font-family: inherit; }
   .grid-focus-layout { grid-template-columns: 1fr; gap: 40px; }
   .grid-skills { grid-template-columns: 1fr; gap: 36px; }
   .grid-3 { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .works-masonry { columns: 2; }
 
   .contact-headline { font-size: 52px; }
 }
@@ -274,6 +488,7 @@ pre { margin: 0; font-family: inherit; }
   /* grids → single column */
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
+  .works-masonry { columns: 1; }
   .grid-focus-layout { grid-template-columns: 1fr; gap: 28px; }
   .grid-focus-cards { grid-template-columns: 1fr; }
   .grid-career { grid-template-columns: 1fr; gap: 40px; }
