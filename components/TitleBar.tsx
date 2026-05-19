@@ -1,4 +1,5 @@
 import { C, F } from "@/lib/theme";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function TitleBar() {
   return (
@@ -19,6 +20,7 @@ export default function TitleBar() {
         <span style={{ color: C.fgDim }}>·</span> portfolio.tsx{" "}
         <span style={{ color: C.fgDim }}>·</span> zsh
       </span>
+      <ThemeToggle />
       <span className="tb-label" style={{ fontFamily: F.mono, fontSize: 11, color: C.fgDim }}>UTC+3 · Addis Ababa</span>
     </div>
   );

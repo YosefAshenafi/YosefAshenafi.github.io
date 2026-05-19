@@ -1,24 +1,27 @@
-// Design tokens — single source of truth for the portfolio colour palette and typography.
-// Fonts are loaded by Next.js (app/layout.tsx) and exposed as CSS custom properties.
+// Design tokens — all values are CSS custom-property references.
+// Actual colour values live in globals.css as :root (dark) and [data-theme="light"].
 
 export const C = {
-  bg: "#0b0d10",
-  bgRaised: "#13161b",
-  bgInset: "#0a0c0f",
-  line: "#1d2128",
-  lineSoft: "#161a20",
-  fg: "#e6e7e9",
-  fgMuted: "#8a8f97",
-  fgDim: "#5b6068",
-  accent: "#7dd3a8",
-  accentDim: "#3a5a48",
-  warn: "#e8c468",
-  pink: "#d97a8c",
-  blue: "#86a8e0",
-  purple: "#b59ae0",
+  bg:          "var(--c-bg)",
+  bgRaised:    "var(--c-bg-raised)",
+  bgInset:     "var(--c-bg-inset)",
+  line:        "var(--c-line)",
+  lineSoft:    "var(--c-line-soft)",
+  fg:          "var(--c-fg)",
+  fgMuted:     "var(--c-fg-muted)",
+  fgDim:       "var(--c-fg-dim)",
+  accent:      "var(--c-accent)",
+  accentDim:   "var(--c-accent-dim)",
+  // replaces `${C.accent}12` / `${C.accent}18` hex-alpha patterns (~8% tint)
+  accentFaint: "var(--c-accent-a08)",
+  // replaces `${C.accent}80` hex-alpha pattern (~50% tint)
+  accentMid:   "var(--c-accent-a50)",
+  warn:        "var(--c-warn)",
+  pink:        "var(--c-pink)",
+  blue:        "var(--c-blue)",
+  purple:      "var(--c-purple)",
 } as const;
 
-// Inline-style font stacks that reference the CSS custom properties set by next/font.
 export const F = {
   sans: "var(--font-sans), -apple-system, system-ui, sans-serif",
   mono: "var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace",

@@ -190,7 +190,7 @@ function WorkModal({ work, onClose }: { work: Work; onClose: () => void }) {
           <span style={{ flex: 1 }} />
           <span style={{
             fontFamily: F.mono, fontSize: 10, color: C.accent,
-            padding: "2px 8px", background: `${C.accent}12`,
+            padding: "2px 8px", background: C.accentFaint,
             border: `1px solid ${C.accentDim}`, borderRadius: 999,
             textTransform: "uppercase", letterSpacing: "0.06em",
           }}>
@@ -358,7 +358,7 @@ export default function Works({ works }: { works: Work[] }) {
           Recent ships.
         </h2>
         <span style={{ fontFamily: F.mono, fontSize: 13, color: C.fgMuted }}>
-          {filtered.length}/{works.length} · 2021 – 2025
+          {filtered.length}/{works.length}
         </span>
       </div>
 
@@ -374,7 +374,7 @@ export default function Works({ works }: { works: Work[] }) {
           {filterList.map(({ key, label }) => (
             <button key={key} onClick={() => setActive(key)} className={`works-filter-btn${active === key ? " active" : ""}`}>
               {label}
-              <span style={{ color: active === key ? `${C.accent}80` : C.fgDim, marginLeft: 3 }}>
+              <span style={{ color: active === key ? C.accentMid : C.fgDim, marginLeft: 3 }}>
                 ({countFor(key)})
               </span>
             </button>
@@ -413,7 +413,7 @@ export default function Works({ works }: { works: Work[] }) {
               <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 7, flexWrap: "wrap" }}>
                 <span style={{
                   fontFamily: F.mono, fontSize: 9.5, color: C.accent,
-                  padding: "2px 7px", background: `${C.accent}12`,
+                  padding: "2px 7px", background: C.accentFaint,
                   border: `1px solid ${C.accentDim}`, borderRadius: 999,
                   textTransform: "uppercase", letterSpacing: "0.08em", whiteSpace: "nowrap",
                 }}>

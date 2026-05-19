@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/lib/ThemeContext";
 import "./globals.css";
 
 const geist = Geist({
@@ -29,8 +30,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geist.variable} ${mono.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${geist.variable} ${mono.variable}`} suppressHydrationWarning>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

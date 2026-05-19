@@ -1,3 +1,5 @@
+"use client";
+
 import type { Testimonial } from "@/data/portfolio";
 import SectionLabel from "@/components/SectionLabel";
 import { C, F } from "@/lib/theme";

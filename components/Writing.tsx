@@ -156,7 +156,7 @@ export default function Writing({ posts, telegram }: Props) {
                 style={{
                   color: C.accent,
                   padding: "2px 8px",
-                  background: `${C.accent}12`,
+                  background: C.accentFaint,
                   borderRadius: 4,
                 }}
               >

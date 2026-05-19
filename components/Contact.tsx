@@ -159,7 +159,7 @@ export default function Contact({ email, emailAlt, phone, address, location, tel
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  background: `${C.accent}18`,
+                  background: C.accentFaint,
                   borderRadius: 5,
                   flexShrink: 0,
                 }}
