@@ -1,4 +1,4 @@
-import Prompt from "@/components/Prompt";
+import TerminalDemo from "@/components/TerminalDemo";
 import { C, F } from "@/lib/theme";
 
 interface Props {
@@ -124,6 +124,9 @@ export default function Hero({ clients, available }: Props) {
             fontSize: 13,
             lineHeight: 1.8,
             overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            minHeight: 340,
           }}
         >
           <div
@@ -135,6 +138,7 @@ export default function Hero({ clients, available }: Props) {
               display: "flex",
               alignItems: "center",
               gap: 10,
+              flexShrink: 0,
             }}
           >
             <span style={{ display: "flex", gap: 6 }}>
@@ -145,78 +149,8 @@ export default function Hero({ clients, available }: Props) {
             <span style={{ marginLeft: 4 }}>~/portfolio · zsh</span>
           </div>
 
-          <div style={{ padding: "18px 20px" }}>
-            <Prompt path="~" command="whoami" />
-            <div style={{ color: C.fg, marginTop: 4 }}>
-              <span style={{ color: C.warn }}>yosef</span> · senior software engineer
-            </div>
-            <div style={{ color: C.fgMuted }}>📍 addis ababa, et · UTC+3</div>
-
-            <div style={{ marginTop: 14 }}>
-              <Prompt path="~" command="cat stack.txt" />
-            </div>
-            <div
-              style={{
-                color: C.fg,
-                marginTop: 4,
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "0 14px",
-              }}
-            >
-              {[".NET", "React", "Django", "React Native", "PostgreSQL"].map((s) => (
-                <span key={s}>
-                  <span style={{ color: C.fgDim }}>›</span> {s}
-                </span>
-              ))}
-            </div>
-
-            <div style={{ marginTop: 14 }}>
-              <Prompt path="~" command="status" />
-            </div>
-            <div
-              style={{
-                color: C.accent,
-                marginTop: 4,
-                display: "flex",
-                alignItems: "center",
-                gap: 8,
-              }}
-            >
-              <span
-                style={{
-                  display: "inline-block",
-                  width: 8,
-                  height: 8,
-                  borderRadius: 999,
-                  background: C.accent,
-                  boxShadow: `0 0 10px ${C.accent}`,
-                }}
-              />
-              open to work · responds in &lt;24h
-            </div>
-
-            <div
-              style={{
-                marginTop: 14,
-                color: C.fgDim,
-                display: "flex",
-                alignItems: "center",
-                gap: 6,
-              }}
-            >
-              <span style={{ color: C.accent }}>$</span>
-              <span
-                style={{
-                  display: "inline-block",
-                  width: 8,
-                  height: 16,
-                  background: C.accent,
-                  animation: "blink 1s steps(2) infinite",
-                  verticalAlign: "middle",
-                }}
-              />
-            </div>
+          <div style={{ padding: "24px 24px", flex: 1 }}>
+            <TerminalDemo />
           </div>
         </div>
       </div>
