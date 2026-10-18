@@ -262,51 +262,52 @@ export const projects: Project[] = [
 
 export const experiences: ResumeItem[] = [
   {
-    period: "Apr 2026 — Present",
+    period: "May 2026 — Present",
+    title: "Offshore Senior Software Developer",
+    org: "CloudX Technology",
+    location: "United States · Remote",
+    description:
+      "Six months in, and still on the engagement. Offshore senior development.",
+  },
+  {
+    period: "Apr 2026 — Jun 2026",
     title: "AI Systems Training Engineer",
     org: "Eaglepoint AI",
-    location: "Hybrid · Full-time",
+    location: "Remote",
     description:
-      "Designing and refining training data and workflows to improve LLM performance on coding and software development tasks. Generating, evaluating, and debugging AI-produced outputs; building structured datasets including step-by-step reasoning, tool-use trajectories, and real-world development scenarios using Claude and Cursor.",
+      "Three months building code datasets for AI training.",
   },
   {
-    period: "Feb 2017 — Present",
-    title: "Tech Lead & Senior Software Developer",
-    org: "SiCS IT Outsourcing",
-    location: "Addis Ababa · Hybrid",
-    description:
-      "Leading delivery on outsourced engagements; architecture, code review, mentorship.",
-  },
-  {
-    period: "Jan 2026 — Mar 2026",
+    period: "2026 · 4 months",
     title: "Full Stack Engineer",
-    org: "Whales Technology · Pairgap",
-    location: "UAE · Remote",
+    org: "Whales Technology",
+    location: "UAE · Contract",
     description:
-      "Building the marketing site and mobile apps for the Pairgap wealth-tech product.",
+      "Four-month contract on Pairgap, across the web app and the mobile apps.",
   },
   {
-    period: "Jan 2021 — Jan 2026",
+    period: "2021 — Nov 2025",
     title: "Senior Software Engineer",
-    org: "BawsHuman",
-    location: "United States · Remote",
+    org: "Hacktoolkit",
+    location: "Remote",
     description:
-      "Health and fitness platform, long-tenure senior IC across web and APIs.",
+      "Four years on the products. ZippyApp, the flagship for job connections in the USA, was sold and is still active under that name. Awesome Bible, on mobile and web, started from a literal Bible app and added more features. BawsHuman, a fitness app with a feed, trainer and client interaction, and a fitness log.",
   },
   {
-    period: "Apr 2019 — Dec 2021",
-    title: "Senior Software Engineer",
-    org: "Talentral / ZippyApp",
-    location: "United States · Remote",
+    period: "Feb 2017 — Feb 2022",
+    title: "Web & Backend Developer",
+    org: "SICS IT Outsourcing",
+    location: "Addis Ababa",
     description:
-      "Hiring platform for hourly workforce, full-stack across React and Node.",
+      "Five years of web and backend development on outsourced client work.",
   },
   {
-    period: "Aug 2016 — Sep 2017",
-    title: "Offshore Developer",
-    org: "CloudX Inc.",
-    location: "United States · Remote",
-    description: "Early offshore engagement, full-stack delivery for U.S. clients.",
+    period: "Sep 2013 — Jul 2016",
+    title: "Software Engineer",
+    org: "Cybersoft Plc",
+    location: "Addis Ababa",
+    description:
+      "Three years from 2013. The first professional role, including delivery of the transport and fleet system.",
   },
 ];
 
