@@ -10,7 +10,48 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const themeScript = `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark");}}catch(e){}})();`;
+const themeScript = `(function(){
+  var started = Date.now();
+  var reduce = false;
+  try { localStorage.removeItem("theme"); } catch (e) {}
+  try {
+    reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  } catch (e) {}
+  document.documentElement.classList.add("dark");
+  document.documentElement.style.colorScheme = "dark";
+
+  var opened = false;
+  function finish() {
+    if (opened) return;
+    opened = true;
+    document.documentElement.classList.add("is-ready");
+    var boot = document.getElementById("boot");
+    if (!boot) return;
+    if (reduce) {
+      boot.remove();
+      return;
+    }
+    boot.classList.add("boot-out");
+    var remove = function () { if (boot.parentNode) boot.remove(); };
+    boot.addEventListener("animationend", remove, { once: true });
+    window.setTimeout(remove, 800);
+  }
+  function open() {
+    if (reduce) {
+      finish();
+      return;
+    }
+    var wait = Math.max(0, 1500 - (Date.now() - started));
+    window.setTimeout(finish, wait);
+  }
+  function arm() {
+    if (document.readyState === "complete") open();
+    else window.addEventListener("load", open);
+    window.setTimeout(open, 2400);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", arm);
+  else arm();
+})();`;
 
 export const metadata: Metadata = {
   title: "Yosef Ashenafi — Senior Software Engineer",
@@ -49,11 +90,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.variable} suppressHydrationWarning>
+    <html lang="en" className={`${roboto.variable} dark`} suppressHydrationWarning>
       <body>
         <Script id="theme-init" strategy="beforeInteractive">
           {themeScript}
         </Script>
+        <div id="boot" role="status" aria-live="polite" aria-label="Loading">
+          <div className="boot-glow" />
+          <div className="boot-lockup">
+            <span className="boot-mark">Y</span>
+            <span className="boot-rule" />
+            <span className="boot-name">Yosef Ashenafi</span>
+          </div>
+        </div>
         {children}
       </body>
     </html>

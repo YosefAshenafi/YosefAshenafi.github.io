@@ -12,12 +12,14 @@ import Writing from "./components/Writing";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import SiteShell from "./components/SiteShell";
+import FollowingLight from "./components/FollowingLight";
 
 export default function Home() {
   return (
     <SiteShell>
       <Header />
       <main id="main">
+        <FollowingLight />
         <Hero />
         <Projects />
         <Services />
