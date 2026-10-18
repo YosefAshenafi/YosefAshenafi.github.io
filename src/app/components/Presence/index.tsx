@@ -1,3 +1,4 @@
+import { GitHubIcon, LinkedInIcon } from "@/components/Icons";
 import { profile } from "@/data";
 import SectionHeading from "../SectionHeading";
 
@@ -108,7 +109,15 @@ export default async function Presence() {
     <section id="github" className="section bg-cream">
       <div className="shell grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-14">
         <div className="min-w-0">
-          <SectionHeading eyebrow="GitHub" title={`On GitHub since ${joinedLabel}`}>
+          <SectionHeading
+            eyebrow={
+              <>
+                <GitHubIcon className="h-7 w-7 text-white" aria-hidden="true" />
+                GitHub
+              </>
+            }
+            title={`On GitHub since ${joinedLabel}`}
+          >
             {data?.total
               ? `${data.total} contributions in the last year${data.repos ? `, across ${data.repos} public repositories` : ""}.`
               : "A public record of commits, reviews, and repositories since the account was opened."}
@@ -173,7 +182,10 @@ export default async function Presence() {
         </div>
 
         <aside className="rounded-[1.25rem] border border-line bg-paper p-6 sm:p-7">
-          <p className="text-xs font-medium uppercase tracking-[0.16em] text-ink-faint">LinkedIn</p>
+          <p className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.16em] text-ink-faint">
+            <LinkedInIcon className="h-7 w-7 text-[#0A66C2]" aria-hidden="true" />
+            LinkedIn
+          </p>
           <p className="tabular mt-4 font-display text-4xl font-semibold text-ink">
             {profile.linkedinConnections.toLocaleString("en-US")}
           </p>

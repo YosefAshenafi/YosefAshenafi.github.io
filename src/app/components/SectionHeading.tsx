@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 interface SectionHeadingProps {
-  eyebrow: string;
+  eyebrow: ReactNode;
   title: string;
   children?: ReactNode;
   align?: "left" | "center";
