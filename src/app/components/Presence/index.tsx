@@ -99,7 +99,8 @@ export default async function Presence() {
   const dayLabels = ["", "Mon", "", "Wed", "", "Fri", ""];
 
   return (
-    <div id="github" className="mt-16">
+    <section id="github" className="section bg-cream">
+      <div className="shell">
         <SectionHeading
           eyebrow={
             <>
@@ -183,6 +184,7 @@ export default async function Presence() {
               View GitHub profile
             </a>
           )}
-    </div>
+      </div>
+    </section>
   );
 }
