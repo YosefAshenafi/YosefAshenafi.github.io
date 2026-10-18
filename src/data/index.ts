@@ -216,16 +216,6 @@ export const projects: Project[] = [
     result: "2023 · Full-stack",
   },
   {
-    id: 13,
-    title: "Awesome Bible Mobile",
-    category: "Mobile",
-    description:
-      "Mobile companion to awesome.bible. Full Bible reading by book and chapter, navigation drawer, settings panel, and a dark-first UI — shipped on iOS and Android.",
-    image: "/portfolio/awesomebible-mobile.png",
-    tech: ["React Native", "SQLite"],
-    result: "2023 · Mobile developer",
-  },
-  {
     id: 14,
     title: "Pairgap",
     category: "Android",
