@@ -1,4 +1,4 @@
-import { GitHubIcon, LinkedInIcon } from "@/components/Icons";
+import { GitHubIcon } from "@/components/Icons";
 import { profile } from "@/data";
 import SectionHeading from "../SectionHeading";
 
@@ -99,9 +99,7 @@ export default async function Presence() {
   const dayLabels = ["", "Mon", "", "Wed", "", "Fri", ""];
 
   return (
-    <section id="github" className="section bg-cream">
-      <div className="shell grid items-stretch gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-8">
-        <div className="flex min-w-0 flex-col">
+    <div id="github" className="mt-16">
         <SectionHeading
           eyebrow={
             <>
@@ -185,27 +183,6 @@ export default async function Presence() {
               View GitHub profile
             </a>
           )}
-        </div>
-
-        <aside className="flex h-full flex-col justify-between gap-6 rounded-[1.25rem] border border-line bg-paper p-5 sm:p-6">
-            <div>
-              <p className="flex h-7 items-center gap-2.5 text-xs font-medium uppercase tracking-[0.16em] text-ink-faint">
-                <LinkedInIcon className="h-7 w-7 shrink-0 text-[#0A66C2]" aria-hidden="true" />
-                LinkedIn
-              </p>
-              <p className="tabular mt-4 font-display text-4xl font-semibold leading-none text-ink">
-                {profile.linkedinConnections.toLocaleString("en-US")}+
-              </p>
-              <p className="mt-2 text-sm text-ink-muted">connections</p>
-            </div>
-            <p className="text-sm leading-relaxed text-ink-soft">
-              A network kept over many years. Open to recruiters for on-site, hybrid, and remote work in Ethiopia.
-            </p>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer" className="btn-primary self-start">
-              View LinkedIn
-            </a>
-          </aside>
-      </div>
-    </section>
+    </div>
   );
 }

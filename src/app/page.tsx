@@ -7,7 +7,6 @@ import Stats from "./components/Stats";
 import Testimonials from "./components/Testimonials";
 import Process from "./components/Process";
 import Resume from "./components/Resume";
-import Presence from "./components/Presence";
 import Writing from "./components/Writing";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -28,7 +27,6 @@ export default function Home() {
         <Testimonials />
         <Process />
         <Resume />
-        <Presence />
         <Writing />
         <Contact />
       </main>

@@ -1,5 +1,6 @@
 import { GitHubIcon, LinkedInIcon, TelegramIcon } from "@/components/Icons";
 import { profile } from "@/data";
+import Presence from "../Presence";
 import SectionHeading from "../SectionHeading";
 
 const channels = [
@@ -66,6 +67,8 @@ export default function Writing() {
             );
           })}
         </ul>
+
+        <Presence />
       </div>
     </section>
   );
