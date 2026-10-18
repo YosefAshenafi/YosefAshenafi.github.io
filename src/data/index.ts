@@ -95,15 +95,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 1,
-    title: "Content Automation Pipeline",
-    category: "Automation · AI",
-    description:
-      "End-to-end AI content automation: scripting with Claude and ChatGPT, voiceover generation via Google AI Studio and ElevenLabs, image generation with Gemini Nano, image-to-video with Meta AI, and caption editing with Caput.",
-    tech: ["Claude", "ChatGPT", "ElevenLabs", "Gemini Nano", "Meta AI", "Caput"],
-    result: "2025 · Creator",
-  },
-  {
     id: 2,
     title: "BawsHuman: Health Platform",
     category: "Web",
@@ -180,16 +171,6 @@ export const projects: Project[] = [
     result: "2023 · Full-stack",
   },
   {
-    id: 9,
-    title: "Dambi Dollo University ERP",
-    category: "Web · Gov",
-    description:
-      "Enterprise Resource Planning system for Dambi Dollo University. Covers employee records, recruitment, payroll, leave management, attendance, and department administration.",
-    image: "/portfolio/ddu.png",
-    tech: ["React", "Django", "PostgreSQL"],
-    result: "2022 · Full-stack",
-  },
-  {
     id: 10,
     title: "Misseso",
     category: "Web · Real Estate",
@@ -234,23 +215,14 @@ export const projects: Project[] = [
   },
   {
     id: 14,
-    title: "SongNote",
+    title: "Pairgap",
     category: "Mobile",
     description:
-      "Mobile app for recording, organizing, and searching song lyrics and notes. Folder organization, voice recording, Amharic and English support — built for worship musicians.",
-    image: "/portfolio/songnote.png",
-    tech: ["React Native", "SQLite"],
-    result: "2025 · Mobile developer",
-  },
-  {
-    id: 15,
-    title: "Bizzle",
-    category: "Mobile · Game",
-    description:
-      "Puzzle quest game that unlocks sacred stories through levels and challenges. Personal records, progress tracking, and a rich story library — all in a polished dark UI.",
-    image: "/portfolio/bizzle.png",
-    tech: ["React Native", "Firebase"],
-    result: "2024 · Mobile developer",
+      "Co-buying and investing app. Calculate your buying power and monthly payment, solo or with co-buyers.",
+    image: "/portfolio/pairgap.png",
+    link: "https://play.google.com/store/search?q=pairgap&c=apps&hl=en_CA",
+    tech: ["Android"],
+    result: "2026 · Google Play",
   },
   {
     id: 16,
@@ -261,16 +233,6 @@ export const projects: Project[] = [
     image: "/portfolio/contrarian.png",
     link: "https://www.contrarian.mba/",
     tech: ["React", "Next.js", "Sanity"],
-    result: "2022 · Full-stack",
-  },
-  {
-    id: 17,
-    title: "EasyGoats",
-    category: "Web",
-    description:
-      "Agricultural platform connecting goat farmers with markets. Environment, economy, news, rent and shipping sections — bridging livestock producers with buyers and information.",
-    image: "/portfolio/easygoats.png",
-    tech: ["React", "Django", "PostgreSQL"],
     result: "2022 · Full-stack",
   },
   {
