@@ -194,7 +194,8 @@
   }
 
   .hero-figure {
-    animation: hero-float 5.5s ease-in-out infinite;
+    transform-origin: center bottom;
+    animation: hero-zoom 6.5s ease-in-out infinite;
   }
 
   .following-light {
@@ -248,13 +249,13 @@
     }
   }
 
-  @keyframes hero-float {
+  @keyframes hero-zoom {
     0%,
     100% {
-      transform: translateY(0);
+      transform: scale(1);
     }
     50% {
-      transform: translateY(-14px);
+      transform: scale(1.06);
     }
   }
 
