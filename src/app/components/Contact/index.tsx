@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { toast } from "react-hot-toast";
 import {
   ArrowRight,
@@ -80,31 +80,61 @@ export default function Contact() {
   const [formData, setFormData] = useState<FormData>(empty);
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const openedAt = useRef(0);
+
+  useEffect(() => {
+    openedAt.current = Date.now();
+    const sentFlag = new URLSearchParams(window.location.search).get("sent");
+    if (sentFlag === "1") setSent(true);
+  }, []);
 
   const update = (key: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [key]: value }));
     setErrors((prev) => ({ ...prev, [key]: undefined }));
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
+    const honey = String(new FormData(form).get("_honey") ?? "");
+    if (honey.trim()) {
+      setSent(true);
+      return;
+    }
+
     const nextErrors = validate(formData);
     setErrors(nextErrors);
     const firstInvalid = Object.keys(nextErrors)[0];
     if (firstInvalid) {
-      const field = document.getElementById(firstInvalid);
-      field?.focus();
+      document.getElementById(firstInvalid)?.focus();
       return;
     }
 
-    const subject = encodeURIComponent(`Project inquiry: ${formData.projectType}`);
-    const body = encodeURIComponent(
-      `${formData.message.trim()}\n\n— ${formData.name.trim()}\n${formData.email.trim()}`
-    );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
-    setSent(true);
-    setFormData(empty);
-    toast.success("Your email app is open — send it and I'll reply soon.");
+    if (Date.now() - openedAt.current < 1500) {
+      toast.error("Please wait a moment, then send again.");
+      return;
+    }
+
+    const nextField = form.querySelector<HTMLInputElement>('input[name="_next"]');
+    if (nextField) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("sent", "1");
+      url.hash = "contact";
+      nextField.value = url.toString();
+    }
+
+    setSubmitting(true);
+    form.submit();
+  };
+
+  const sendAnother = () => {
+    setSent(false);
+    setSubmitting(false);
+    const url = new URL(window.location.href);
+    url.searchParams.delete("sent");
+    url.hash = "contact";
+    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
   };
 
   const control =
@@ -200,16 +230,25 @@ export default function Contact() {
                 <p className="mt-3 max-w-sm text-sm leading-relaxed text-ink-muted">
                   Your note is in. If it&apos;s urgent, email {profile.email} directly.
                 </p>
-                <button
-                  type="button"
-                  className="btn-outline mt-8"
-                  onClick={() => setSent(false)}
-                >
+                <button type="button" className="btn-outline mt-8" onClick={sendAnother}>
                   Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} noValidate>
+              <form
+                action={`https://formsubmit.co/${profile.email}`}
+                method="POST"
+                onSubmit={handleSubmit}
+                noValidate
+                className="relative"
+              >
+                <input type="hidden" name="_subject" value={`Project inquiry: ${formData.projectType}`} />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_replyto" value={formData.email.trim()} />
+                <input type="hidden" name="_next" value="" />
+                <div className="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true" inert>
+                  <input name="_honey" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
+                </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="text-sm font-medium text-ink-soft">
@@ -265,7 +304,7 @@ export default function Contact() {
                     <div className="relative mt-2">
                       <select
                         id="projectType"
-                        name="projectType"
+                        name="Project type"
                         value={formData.projectType}
                         onChange={(event) => update("projectType", event.target.value)}
                         className={`${control} appearance-none pr-10 ${errors.projectType ? "border-danger" : "border-line"}`}
@@ -308,8 +347,12 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <button type="submit" className="btn-primary mt-6 w-full sm:w-auto">
-                  Send message
+                <button
+                  type="submit"
+                  className="btn-primary mt-6 w-full sm:w-auto"
+                  disabled={submitting}
+                >
+                  {submitting ? "Sending…" : "Send message"}
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </form>
