@@ -6,7 +6,6 @@ import {
   StackGroup,
   Stat,
   Testimonial,
-  WritingPost,
 } from "@/types";
 
 export const profile = {
@@ -368,36 +367,6 @@ export const stack: StackGroup[] = [
   {
     name: "Infra & tools",
     items: ["Docker", "AWS", "GitHub Actions", "Vercel", "Chapa"],
-  },
-];
-
-export const writing: WritingPost[] = [
-  {
-    date: "Apr 18, 2025",
-    tag: "Journey",
-    title: "Why I Started Building in Public",
-    excerpt:
-      "After years of shipping products for other people, I decided to document my own process: the decisions, the dead ends, and the small wins. This is why.",
-    readTime: "5 min",
-    href: "https://t.me/jossybuilds",
-  },
-  {
-    date: "Feb 3, 2025",
-    tag: "Mobile",
-    title: "From Figma to App Store in 6 Weeks: Lessons from Pairgap iOS",
-    excerpt:
-      "What it actually takes to go from a design handoff to a live native app: SwiftUI quirks, App Store review, and the things no tutorial covers.",
-    readTime: "8 min",
-    href: "https://t.me/jossybuilds",
-  },
-  {
-    date: "Nov 14, 2024",
-    tag: "Backend",
-    title: "The Boring Decisions That Decide Whether Your API Survives",
-    excerpt:
-      "Schema design, pagination contracts, auth boundaries — the choices that feel dull in week one and become load-bearing in year two.",
-    readTime: "7 min",
-    href: "https://t.me/jossybuilds",
   },
 ];
 

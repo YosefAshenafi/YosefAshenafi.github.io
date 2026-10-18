@@ -127,11 +127,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-on-band/10 pt-6 text-xs text-on-band/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 border-t border-on-band/10 pt-6 text-xs text-on-band/70">
           <p>
             © {year} {profile.name}. All rights reserved.
           </p>
-          <p>Designed and built with Next.js.</p>
         </div>
       </div>
     </footer>

@@ -32,15 +32,6 @@ export interface StackGroup {
   items: string[];
 }
 
-export interface WritingPost {
-  date: string;
-  tag: string;
-  title: string;
-  excerpt: string;
-  readTime: string;
-  href: string;
-}
-
 export interface ResumeItem {
   period: string;
   title: string;
