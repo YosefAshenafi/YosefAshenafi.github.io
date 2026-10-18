@@ -107,13 +107,25 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "BawsHuman: Mobile App",
-    category: "Mobile",
+    title: "BawsHuman",
+    category: "Android",
     description:
       "Mobile companion for the BawsHuman fitness platform. Custom workouts, programmed plans, exercise explorer, and a full training library — built for athletes and their coaches.",
     image: "/portfolio/bawshuman-mobile.png",
+    link: "https://play.google.com/store/search?q=bawshuman&c=apps&hl=en_CA",
     tech: ["React Native", "Node.js"],
-    result: "2023 · Mobile lead",
+    result: "2023 · Google Play",
+  },
+  {
+    id: 20,
+    title: "BawsHuman",
+    category: "iOS",
+    description:
+      "Track workouts, meals, sleep, and progress. Built for athletes, trainers, and coaches.",
+    image: "/portfolio/bawshuman-ios.png",
+    link: "https://apps.apple.com/us/app/bawshuman/id6499568476",
+    tech: ["iOS"],
+    result: "2023 · App Store",
   },
   {
     id: 4,
@@ -216,13 +228,24 @@ export const projects: Project[] = [
   {
     id: 14,
     title: "Pairgap",
-    category: "Mobile",
+    category: "Android",
     description:
       "Co-buying and investing app. Calculate your buying power and monthly payment, solo or with co-buyers.",
     image: "/portfolio/pairgap.png",
     link: "https://play.google.com/store/search?q=pairgap&c=apps&hl=en_CA",
     tech: ["Android"],
     result: "2026 · Google Play",
+  },
+  {
+    id: 15,
+    title: "Pairgap",
+    category: "iOS",
+    description:
+      "Co-buying and property investing app. See your buying power, check your Readiness Score, and build a profile for potential matches.",
+    image: "/portfolio/pairgap-ios.png",
+    link: "https://apps.apple.com/us/app/pairgap/id6755288619",
+    tech: ["iOS"],
+    result: "2026 · App Store",
   },
   {
     id: 16,
