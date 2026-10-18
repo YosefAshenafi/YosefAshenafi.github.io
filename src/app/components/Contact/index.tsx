@@ -85,8 +85,6 @@ export default function Contact() {
 
   useEffect(() => {
     openedAt.current = Date.now();
-    const sentFlag = new URLSearchParams(window.location.search).get("sent");
-    if (sentFlag === "1") setSent(true);
   }, []);
 
   const update = (key: keyof FormData, value: string) => {
@@ -94,7 +92,7 @@ export default function Contact() {
     setErrors((prev) => ({ ...prev, [key]: undefined }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const honey = String(new FormData(form).get("_honey") ?? "");
@@ -116,25 +114,44 @@ export default function Contact() {
       return;
     }
 
-    const nextField = form.querySelector<HTMLInputElement>('input[name="_next"]');
-    if (nextField) {
-      const url = new URL(window.location.href);
-      url.searchParams.set("sent", "1");
-      url.hash = "contact";
-      nextField.value = url.toString();
-    }
-
     setSubmitting(true);
-    form.submit();
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(profile.email)}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          "Project type": formData.projectType,
+          message: formData.message.trim(),
+          _subject: `Project inquiry: ${formData.projectType}`,
+          _template: "table",
+          _replyto: formData.email.trim(),
+          _captcha: "false",
+          _honey: "",
+        }),
+      });
+      const result = (await response.json().catch(() => null)) as { success?: string | boolean } | null;
+      const delivered = response.ok && (result?.success === true || result?.success === "true");
+      if (!delivered) {
+        toast.error(`Couldn't send just now. Email ${profile.email} directly.`);
+        setSubmitting(false);
+        return;
+      }
+      setFormData(empty);
+      setSent(true);
+    } catch {
+      toast.error(`Couldn't send just now. Email ${profile.email} directly.`);
+      setSubmitting(false);
+    }
   };
 
   const sendAnother = () => {
     setSent(false);
     setSubmitting(false);
-    const url = new URL(window.location.href);
-    url.searchParams.delete("sent");
-    url.hash = "contact";
-    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
   };
 
   const control =
@@ -235,17 +252,7 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form
-                action={`https://formsubmit.co/${profile.email}`}
-                method="POST"
-                onSubmit={handleSubmit}
-                noValidate
-                className="relative"
-              >
-                <input type="hidden" name="_subject" value={`Project inquiry: ${formData.projectType}`} />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_replyto" value={formData.email.trim()} />
-                <input type="hidden" name="_next" value="" />
+              <form onSubmit={handleSubmit} noValidate className="relative">
                 <div className="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true" inert>
                   <input name="_honey" type="text" tabIndex={-1} autoComplete="off" defaultValue="" />
                 </div>
