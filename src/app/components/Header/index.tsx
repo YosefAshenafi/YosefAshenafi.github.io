@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "@/components/Icons";
+import { CloseIcon, MenuIcon } from "@/components/Icons";
 import { profile } from "@/data";
 
 const navItems = [
@@ -16,18 +16,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    setDark(document.documentElement.classList.contains("dark"));
-  }, []);
-
-  const toggleTheme = () => {
-    const next = !document.documentElement.classList.contains("dark");
-    document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("theme", next ? "dark" : "light");
-    setDark(next);
-  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -143,18 +131,6 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className={`grid h-11 w-11 place-items-center rounded-full border ${
-                onHero
-                  ? "border-ink/15 text-ink dark:border-white/25 dark:text-white"
-                  : "border-ink/15 text-ink"
-              }`}
-              aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
-            >
-              {dark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
-            </button>
             <a href="#contact" className="btn-primary hidden sm:inline-flex">
               Let&apos;s talk
             </a>
