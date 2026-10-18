@@ -134,10 +134,18 @@ export default function Contact() {
           _honey: "",
         }),
       });
-      const result = (await response.json().catch(() => null)) as { success?: string | boolean } | null;
+      const result = (await response.json().catch(() => null)) as {
+        success?: string | boolean;
+        message?: string;
+      } | null;
       const delivered = response.ok && (result?.success === true || result?.success === "true");
       if (!delivered) {
-        toast.error(`Couldn't send just now. Email ${profile.email} directly.`);
+        const waiting = result?.message?.includes("Activation");
+        toast.error(
+          waiting
+            ? `Confirm the FormSubmit email sent to ${profile.email}, then send this again.`
+            : `Couldn't send just now. Email ${profile.email} directly.`
+        );
         setSubmitting(false);
         return;
       }
