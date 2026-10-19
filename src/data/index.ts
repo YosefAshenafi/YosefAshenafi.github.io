@@ -18,7 +18,7 @@ export const profile = {
   emailAlt: "jossyfreelancer@gmail.com",
   phone: "+251 910 810 689",
   cvUrl:
-    "https://drive.google.com/file/d/1zn_GK0VlgwrVI9R7nQ7peD2lDw559KMU/view?usp=sharing",
+    "https://drive.google.com/file/d/1CTSaiBqlVft3wf7U_5j1exXCJaJ8KvyY/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/yosef-ashenafi-1a378684",
   linkedinConnections: 2548,
   github: "https://github.com/YosefAshenafi",
@@ -263,43 +263,57 @@ export const projects: Project[] = [
 export const experiences: ResumeItem[] = [
   {
     period: "May 2026 — Present",
-    title: "Offshore Senior Software Developer",
-    org: "CloudX Technology",
-    location: "United States · Remote",
+    title: "Offshore Developer",
+    org: "CloudX Inc.",
+    location: "United States",
     description:
-      "Six months in, and still on the engagement. Offshore senior development.",
+      "Accounts payable SaaS for clients including Versace, ADTRAN, and Nestlé. Transaction documents, automated data entry, and reporting, in C#, Node.js, and Entity Framework.",
   },
   {
     period: "Apr 2026 — Jun 2026",
     title: "AI Systems Training Engineer",
     org: "Eaglepoint AI",
-    location: "Remote",
     description:
-      "Three months building code datasets for AI training.",
+      "Three months of code datasets for AI training: step-by-step reasoning, tool use, and real development scenarios, using Claude and Cursor.",
   },
   {
-    period: "2026 · 4 months",
+    period: "Jan 2026 — Apr 2026",
     title: "Full Stack Engineer",
     org: "Whales Technology",
-    location: "UAE · Contract",
+    location: "United Arab Emirates",
     description:
-      "Four-month contract on Pairgap, across the web app and the mobile apps.",
+      "Four months on Pairgap. Web features, the first production Android and iOS apps through publishing, and a beta waitlist for early users.",
   },
   {
-    period: "2021 — Nov 2025",
+    period: "Dec 2023 — Jan 2026",
     title: "Senior Software Engineer",
-    org: "Hacktoolkit",
-    location: "Remote",
+    org: "BawsHuman",
+    location: "United States",
     description:
-      "Four years on the products. ZippyApp, the flagship for job connections in the USA, was sold and is still active under that name. Awesome Bible, on mobile and web, started from a literal Bible app and added more features. BawsHuman, a fitness app with a feed, trainer and client interaction, and a fitness log.",
+      "Web and mobile for athletes, trainers, and clients. Profiles, the exercise library, and trainer–client workout tracking.",
   },
   {
-    period: "Feb 2017 — Feb 2022",
-    title: "Web & Backend Developer",
+    period: "Feb 2023 — Nov 2023",
+    title: "Senior Software Engineer",
+    org: "GoodPeople",
+    description:
+      "Web app in React and Python. Shared design system, APIs, and interfaces built to WCAG 2 with the design team.",
+  },
+  {
+    period: "Nov 2020 — Jan 2023",
+    title: "Senior Software Engineer",
+    org: "Talentral / ZippyApp",
+    location: "United States",
+    description:
+      "Features and fixes on the hiring platform, including a mobile-responsive admin tool.",
+  },
+  {
+    period: "Aug 2016 — Oct 2020",
+    title: "Tech Lead & Senior Software Developer",
     org: "SICS IT Outsourcing",
     location: "Addis Ababa",
     description:
-      "Five years of web and backend development on outsourced client work.",
+      "Four years with a team of 5–10 across mobile, web, and backend. Enterprise systems, including the African Union knowledge platform, plus ERP work on Odoo and ERPNext.",
   },
   {
     period: "Sep 2013 — Jul 2016",
@@ -307,7 +321,7 @@ export const experiences: ResumeItem[] = [
     org: "Cybersoft Plc",
     location: "Addis Ababa",
     description:
-      "Three years from 2013. The first professional role, including delivery of the transport and fleet system.",
+      "From junior engineer to solution line manager for the Transport and Fleet Management System, through delivery and client training.",
   },
 ];
 
