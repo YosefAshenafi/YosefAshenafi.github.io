@@ -198,6 +198,22 @@
     animation: hero-zoom 6.5s ease-in-out infinite;
   }
 
+  .hero-portrait {
+    right: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-portrait {
+      right: max(6.25rem, calc((100% - 1180px) / 2 + 1.25rem));
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-portrait {
+      right: max(8rem, calc((100% - 1180px) / 2 + 1.25rem));
+    }
+  }
+
   .following-light {
     position: fixed;
     z-index: 0;
