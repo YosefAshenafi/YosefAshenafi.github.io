@@ -45,9 +45,3 @@ export interface Stat {
   value: string;
   label: string;
 }
-
-export interface ProcessStep {
-  number: string;
-  title: string;
-  description: string;
-}

@@ -1,5 +1,4 @@
 import {
-  ProcessStep,
   Project,
   ResumeItem,
   Service,
@@ -382,32 +381,6 @@ export const stack: StackGroup[] = [
   {
     name: "Infra & tools",
     items: ["Docker", "AWS", "GitHub Actions", "Vercel", "Chapa"],
-  },
-];
-
-export const process: ProcessStep[] = [
-  {
-    number: "01",
-    title: "Scope",
-    description:
-      "I translate a product ask into a system engineers can actually build and operate.",
-  },
-  {
-    number: "02",
-    title: "Design",
-    description:
-      "Schema, auth, and the contracts that decide whether a system survives growth.",
-  },
-  {
-    number: "03",
-    title: "Build",
-    description:
-      "Hands-on delivery across the backend, the web app, or the mobile client.",
-  },
-  {
-    number: "04",
-    title: "Review",
-    description: "Code review and mentorship while the work ships.",
   },
 ];
 

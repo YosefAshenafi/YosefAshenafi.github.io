@@ -4,13 +4,8 @@ import SectionHeading from "../SectionHeading";
 
 type Day = { date: string; level: number; label: string };
 
-const LEVELS = [
-  "bg-line",
-  "bg-brand/30",
-  "bg-brand/55",
-  "bg-brand/80",
-  "bg-brand",
-];
+// GitHub's current dark contribution graph.
+const LEVELS = ["#151b23", "#033a16", "#196c2e", "#2ea043", "#56d364"];
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -118,10 +113,10 @@ export default async function Presence() {
           {grid ? (
             <div className="mt-8 flex min-w-0 flex-col rounded-[1.25rem] border border-line bg-paper p-5 sm:p-6">
               <div className="min-w-0 overflow-x-auto pb-2">
-                <div style={{ minWidth: grid.width * 11 }}>
+                <div style={{ minWidth: `calc(1.75rem + ${grid.width * 14}px)` }}>
                   <div
                     className="grid h-4 items-end text-[10px] leading-none text-ink-faint"
-                    style={{ gridTemplateColumns: `1.75rem repeat(${grid.width}, minmax(8px, 1fr))`, columnGap: 3 }}
+                    style={{ gridTemplateColumns: `1.75rem repeat(${grid.width}, 11px)`, columnGap: 3 }}
                     aria-hidden="true"
                   >
                     <span />
@@ -136,7 +131,7 @@ export default async function Presence() {
                   </div>
                   <div
                     className="mt-1 grid gap-[3px]"
-                    style={{ gridTemplateColumns: `1.75rem repeat(${grid.width}, minmax(8px, 1fr))` }}
+                    style={{ gridTemplateColumns: `1.75rem repeat(${grid.width}, 11px)` }}
                     role="img"
                     aria-label={`${data?.total ? `${data.total}+` : "Recent"} GitHub contributions in the last year`}
                   >
@@ -157,8 +152,12 @@ export default async function Presence() {
                           <span
                             key={day?.date ?? `empty-${weekday}-${col}`}
                             title={day?.label || undefined}
-                            className={`aspect-square w-full rounded-[2px] ${day ? LEVELS[day.level] ?? LEVELS[0] : "bg-transparent"}`}
-                            style={{ gridColumn: col + 2, gridRow: weekday + 1 }}
+                            className="aspect-square w-full rounded-[2px]"
+                            style={{
+                              gridColumn: col + 2,
+                              gridRow: weekday + 1,
+                              backgroundColor: day ? (LEVELS[day.level] ?? LEVELS[0]) : "transparent",
+                            }}
                           />
                         );
                       }),
@@ -173,7 +172,11 @@ export default async function Presence() {
                 <p className="flex items-center gap-1.5" aria-hidden="true">
                   Less
                   {LEVELS.map((level) => (
-                    <span key={level} className={`h-2.5 w-2.5 rounded-[2px] ${level}`} />
+                    <span
+                      key={level}
+                      className="h-[10px] w-[10px] rounded-[2px]"
+                      style={{ backgroundColor: level }}
+                    />
                   ))}
                   More
                 </p>
