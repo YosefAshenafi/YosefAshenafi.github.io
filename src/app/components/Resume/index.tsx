@@ -61,7 +61,7 @@ export default function Resume() {
         </div>
 
         <div className="mt-16 border-t border-line pt-14 sm:mt-20 sm:pt-16">
-          <SectionHeading eyebrow="Education" title="About education">
+          <SectionHeading eyebrow="Education" title="Where I studied">
             M.Sc. and B.Sc. in computing, an ALX Africa certificate, and a Codility silver award.
           </SectionHeading>
 

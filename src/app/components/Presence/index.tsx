@@ -1,63 +1,14 @@
 import { GitHubIcon } from "@/components/Icons";
 import { profile } from "@/data";
+import { loadGithub, type ContributionDay } from "@/lib/github";
 import SectionHeading from "../SectionHeading";
 
-type Day = { date: string; level: number; label: string };
+type Day = ContributionDay;
 
-// GitHub's current dark contribution graph.
-const LEVELS = ["#151b23", "#033a16", "#196c2e", "#2ea043", "#56d364"];
+// GitHub's dark contribution graph, without the neon top step that glows at this size.
+const LEVELS = ["#151b23", "#0e4429", "#006d32", "#26a641", "#2ea043"];
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-async function loadGithub() {
-  const headers = {
-    "User-Agent": "yosefashenafi-site",
-    Accept: "text/html,application/json",
-  };
-
-  const [graphRes, userRes] = await Promise.all([
-    fetch("https://github.com/users/YosefAshenafi/contributions", {
-      headers: { ...headers, "X-Requested-With": "XMLHttpRequest" },
-      next: { revalidate: 60 * 60 * 6 },
-    }),
-    fetch("https://api.github.com/users/YosefAshenafi", {
-      headers: { ...headers, Accept: "application/vnd.github+json" },
-      next: { revalidate: 60 * 60 * 6 },
-    }),
-  ]);
-
-  const html = graphRes.ok ? await graphRes.text() : "";
-  const user = userRes.ok ? ((await userRes.json()) as { public_repos?: number; created_at?: string }) : null;
-
-  const totalMatch = html.match(/([\d,]+)\s+contributions\s+in the last year/);
-  const cells = [...html.matchAll(/data-date="(\d{4}-\d{2}-\d{2})"[\s\S]*?data-level="(\d)"[\s\S]*?<tool-tip[^>]*>([^<]*)<\/tool-tip>/g)].map(
-    (match) => ({
-      date: match[1],
-      level: Number(match[2]),
-      label: match[3].trim(),
-    }),
-  );
-
-  const rows: Day[][] = [];
-  let row: Day[] = [];
-  let previous = "";
-  for (const cell of cells) {
-    if (previous && cell.date < previous) {
-      rows.push(row);
-      row = [];
-    }
-    row.push(cell);
-    previous = cell.date;
-  }
-  if (row.length) rows.push(row);
-
-  return {
-    total: totalMatch?.[1] ?? null,
-    rows: rows.length === 7 ? rows : [],
-    repos: user?.public_repos ?? null,
-    joined: user?.created_at ?? profile.githubJoined,
-  };
-}
 
 function monthMarks(rows: Day[][]) {
   const width = Math.max(...rows.map((weekdays) => weekdays.length));
@@ -113,10 +64,10 @@ export default async function Presence() {
           {grid ? (
             <div className="mt-8 flex min-w-0 flex-col rounded-[1.25rem] border border-line bg-paper p-5 sm:p-6">
               <div className="min-w-0 overflow-x-auto pb-2">
-                <div style={{ minWidth: `calc(1.75rem + ${grid.width * 14}px)` }}>
+                <div className="w-full" style={{ minWidth: `calc(1.75rem + ${grid.width * 14}px)` }}>
                   <div
-                    className="grid h-4 items-end text-[10px] leading-none text-ink-faint"
-                    style={{ gridTemplateColumns: `1.75rem repeat(${grid.width}, 11px)`, columnGap: 3 }}
+                    className="grid h-4 w-full items-end text-[10px] leading-none text-ink-faint"
+                    style={{ gridTemplateColumns: `1.75rem repeat(${grid.width}, minmax(10px, 1fr))`, columnGap: 3 }}
                     aria-hidden="true"
                   >
                     <span />
@@ -130,8 +81,8 @@ export default async function Presence() {
                     })}
                   </div>
                   <div
-                    className="mt-1 grid gap-[3px]"
-                    style={{ gridTemplateColumns: `1.75rem repeat(${grid.width}, 11px)` }}
+                    className="mt-1 grid w-full gap-[3px]"
+                    style={{ gridTemplateColumns: `1.75rem repeat(${grid.width}, minmax(10px, 1fr))` }}
                     role="img"
                     aria-label={`${data?.total ? `${data.total}+` : "Recent"} GitHub contributions in the last year`}
                   >

@@ -110,7 +110,7 @@ export const projects: Project[] = [
     description:
       "Mobile companion for the BawsHuman fitness platform. Custom workouts, programmed plans, exercise explorer, and a full training library — built for athletes and their coaches.",
     image: "/portfolio/bawshuman-mobile.png",
-    link: "https://play.google.com/store/search?q=bawshuman&c=apps&hl=en_CA",
+    link: "https://play.google.com/store/apps/details?id=com.BawsHuman",
     tech: ["React Native", "Node.js"],
     result: "2023 · Google Play",
   },
