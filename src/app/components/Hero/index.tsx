@@ -84,7 +84,7 @@ export default function Hero() {
             </div>
           </div>
       </div>
-      <div className="pointer-events-none absolute bottom-0 right-10 top-24 hidden w-[min(36vw,32rem)] animate-portrait-in motion-reduce:animate-none lg:right-16 lg:block xl:right-24">
+      <div className="pointer-events-none absolute bottom-0 right-16 top-24 hidden w-[min(36vw,32rem)] animate-portrait-in motion-reduce:animate-none lg:right-[5.5rem] lg:block xl:right-[7.5rem]">
         <div className="hero-figure absolute inset-0">
         <Image
           src={profile.portraitLight}
