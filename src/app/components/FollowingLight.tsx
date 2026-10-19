@@ -2,8 +2,6 @@
 
 import { useEffect, useRef } from "react";
 
-const spots = ["spot-a", "spot-b", "spot-c"];
-
 export default function FollowingLight() {
   const lightRef = useRef<HTMLDivElement>(null);
 
@@ -11,14 +9,11 @@ export default function FollowingLight() {
     const light = lightRef.current;
     if (!light) return;
 
-    const sections = [...document.querySelectorAll<HTMLElement>("#main section")];
-    if (!sections.length) return;
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    if (!finePointer.matches) return;
 
-    sections.forEach((section) => {
-      if (getComputedStyle(section).position === "static") {
-        section.style.position = "relative";
-      }
-      [...section.children].forEach((child) => {
+    document.querySelectorAll<HTMLElement>("#main section, footer").forEach((region) => {
+      [...region.children].forEach((child) => {
         if (!(child instanceof HTMLElement) || child === light) return;
         const pos = getComputedStyle(child).position;
         if (pos === "absolute" || pos === "fixed") return;
@@ -27,34 +22,47 @@ export default function FollowingLight() {
       });
     });
 
-    let current: HTMLElement | null = null;
-    const place = (section: HTMLElement) => {
-      if (current === section) return;
-      current = section;
-      const index = sections.indexOf(section);
-      light.dataset.spot = spots[index % spots.length];
-      section.appendChild(light);
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let x = window.innerWidth * 0.32;
+    let y = window.innerHeight * 0.38;
+    let targetX = x;
+    let targetY = y;
+    let frame = 0;
+
+    const paint = () => {
+      light.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
     };
 
-    const pick = () => {
-      const mark = window.innerHeight * 0.42;
-      const active =
-        sections.find((section) => {
-          const rect = section.getBoundingClientRect();
-          return rect.top <= mark && rect.bottom >= mark;
-        }) ?? sections[0];
-      place(active);
+    const tick = () => {
+      const ease = reduce.matches ? 1 : 0.18;
+      x += (targetX - x) * ease;
+      y += (targetY - y) * ease;
+      paint();
+      if (Math.abs(targetX - x) < 0.4 && Math.abs(targetY - y) < 0.4) {
+        x = targetX;
+        y = targetY;
+        paint();
+        return;
+      }
+      frame = requestAnimationFrame(tick);
     };
 
-    pick();
-    window.addEventListener("scroll", pick, { passive: true });
-    window.addEventListener("resize", pick);
+    const follow = (event: PointerEvent) => {
+      if (event.pointerType === "touch") return;
+      targetX = event.clientX;
+      targetY = event.clientY;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(tick);
+    };
+
+    paint();
+    window.addEventListener("pointermove", follow, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", pick);
-      window.removeEventListener("resize", pick);
+      cancelAnimationFrame(frame);
+      window.removeEventListener("pointermove", follow);
     };
   }, []);
 
-  return <div ref={lightRef} className="following-light" data-spot="spot-a" aria-hidden="true" />;
+  return <div ref={lightRef} className="following-light" aria-hidden="true" />;
 }

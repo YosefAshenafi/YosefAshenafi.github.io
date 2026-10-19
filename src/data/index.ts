@@ -18,7 +18,7 @@ export const profile = {
   emailAlt: "jossyfreelancer@gmail.com",
   phone: "+251 910 810 689",
   cvUrl:
-    "https://drive.google.com/file/d/1CTSaiBqlVft3wf7U_5j1exXCJaJ8KvyY/view?usp=sharing",
+    "https://drive.google.com/file/d/1UpRsHoqWxRzBLKLNMrMpDgweGHTMpKGk/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/yosef-ashenafi-1a378684",
   linkedinConnections: 2548,
   github: "https://github.com/YosefAshenafi",

@@ -216,6 +216,8 @@
 
   .following-light {
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 0;
     width: min(34rem, 88vw);
     height: min(34rem, 88vw);
@@ -226,25 +228,13 @@
       rgba(186, 224, 204, 0.28) 0%,
       rgba(49, 55, 52, 0) 68%
     );
-    animation: hero-drift 8s ease-in-out infinite;
-    transition:
-      top 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-      left 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translate3d(32vw, 38vh, 0) translate(-50%, -50%);
   }
 
-  .following-light[data-spot="spot-a"] {
-    top: 8%;
-    left: -6rem;
-  }
-
-  .following-light[data-spot="spot-b"] {
-    top: 18%;
-    left: calc(100% - 24rem);
-  }
-
-  .following-light[data-spot="spot-c"] {
-    top: 46%;
-    left: 12%;
+  @media (hover: none), (pointer: coarse) {
+    .following-light {
+      display: none;
+    }
   }
 
   .hero-mark {
