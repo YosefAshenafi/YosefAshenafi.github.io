@@ -1,8 +1,17 @@
-import { LinkedInIcon, TelegramIcon } from "@/components/Icons";
+import { LinkedInIcon, TelegramIcon, TikTokIcon } from "@/components/Icons";
 import { profile } from "@/data";
 import SectionHeading from "../SectionHeading";
 
 const channels = [
+  {
+    name: "LinkedIn",
+    icon: LinkedInIcon,
+    color: "text-[#0A66C2]",
+    figure: `${profile.linkedinConnections.toLocaleString("en-US")}+`,
+    detail: "A network kept over many years. The public work is what they see.",
+    href: profile.linkedin,
+    action: "View LinkedIn",
+  },
   {
     name: "Telegram",
     icon: TelegramIcon,
@@ -13,13 +22,13 @@ const channels = [
     action: "Join the community",
   },
   {
-    name: "LinkedIn",
-    icon: LinkedInIcon,
-    color: "text-[#0A66C2]",
-    figure: `${profile.linkedinConnections.toLocaleString("en-US")}+`,
-    detail: "A network kept over many years. The public work is what they see.",
-    href: profile.linkedin,
-    action: "View LinkedIn",
+    name: "TikTok",
+    icon: TikTokIcon,
+    color: "text-white",
+    figure: "@jossybuilds",
+    detail: "Short clips of a build while it is still in progress.",
+    href: profile.tiktok,
+    action: "Watch on TikTok",
   },
 ];
 
@@ -39,7 +48,7 @@ export default function Writing() {
           JossyBuilds is the Telegram community where a build is shared while it is still in progress. The same work goes out on LinkedIn, GitHub, and TikTok, which is how it reaches and influences the people who follow it.
         </SectionHeading>
 
-        <ul className="mt-10 grid items-stretch gap-4 sm:grid-cols-2">
+        <ul className="mt-10 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {channels.map((channel) => {
             const Icon = channel.icon;
             return (

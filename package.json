@@ -13,6 +13,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.1",
+    "simple-icons": "^16.35.0",
     "swiper": "^11.2.1",
     "wow.js": "^1.2.2"
   },

@@ -23,6 +23,7 @@ export const profile = {
   github: "https://github.com/YosefAshenafi",
   githubJoined: "2014-05-19",
   telegram: "https://t.me/jossybuilds",
+  tiktok: "https://www.tiktok.com/@jossybuilds",
   portrait: "/portfolio/portrait-figure.png",
   portraitLight: "/portfolio/portrait-light.png",
   languages: "English, Amharic",
@@ -364,23 +365,43 @@ export const education: ResumeItem[] = [
 export const stack: StackGroup[] = [
   {
     name: "Languages",
-    items: ["C#", "JavaScript", "TypeScript", "Python", "Dart", "SQL"],
+    items: ["C#", "JavaScript", "TypeScript", "Python", "Go", "Rust", "Dart", "SQL Server"],
   },
   {
     name: "Frontend",
-    items: ["React", "Next.js", "React Native", "Tailwind CSS", "Flutter"],
+    items: ["React", "Next.js", "Tailwind CSS", "Bootstrap", "Sanity"],
+  },
+  {
+    name: "Mobile",
+    items: ["React Native", "Flutter", "Swift", "Kotlin"],
   },
   {
     name: "Backend",
-    items: [".NET", "Django", "Node.js", "Express", "GraphQL"],
+    items: ["ASP.NET Core", "Django", "Node.js", "Express", "GraphQL"],
   },
   {
-    name: "Data",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Firebase"],
+    name: "Databases",
+    items: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB", "Redis", "Firebase"],
   },
   {
-    name: "Infra & tools",
-    items: ["Docker", "AWS", "GitHub Actions", "Vercel", "Chapa"],
+    name: "AI",
+    items: ["Claude", "Cursor", "GitHub Copilot", "Gemini", "Perplexity", "Hugging Face", "Ollama"],
+  },
+  {
+    name: "Platforms & tools",
+    items: [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "Linux",
+      "Nginx",
+      "Terraform",
+      "Git",
+      "GitHub Actions",
+      "Vercel",
+      "Odoo",
+      "ERPNext",
+    ],
   },
 ];
 
